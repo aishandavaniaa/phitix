@@ -14,27 +14,29 @@ $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
     $id     = $_POST['id'];
-    $pembelian   = $_POST['pembelian'];
-    $jenis_pakan   = $_POST['jenis_pakan'];
-    $stok_pakan   = $_POST['stok_pakan'];
-    $total_harga   = $_POST['total_harga'];
+    $bibit_ayam   = $_POST['bibit_ayam'];
+    $harga_pakan   = $_POST['harga_pakan'];
+    $biaya_vaksin   = $_POST['biaya_vaksin'];
+    $tenaga_kerja   = $_POST['tenaga_kerja'];
+    
 
-    $query = "UPDATE detail_pakan SET pembelian='$pembelian', jenis_pakan='$jenis_pakan', stok_pakan='$stok_pakan', total_harga='$total_harga' WHERE id='$id'";
+    $query = "UPDATE pengeluaran SET bibit_ayam='$bibit_ayam', harga_pakan='$harga_pakan', tenaga_kerja='$tenaga_kerja', biaya_vaksin='$biaya_vaksin' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-    header('Location: pakan.php');
+    header('Location: pengeluaran.php');
 }
 $id = $_GET['id'];
-$query = "SELECT * FROM detail_pakan WHERE id='$id'";
+$query = "SELECT * FROM pengeluaran WHERE id='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
     $id = $row['id'];
-    $pembelian = $row['pembelian'];
-    $jenis_pakan = $row['jenis_pakan'];
-    $stok_pakan = $row['stok_pakan'];
-    $total_harga = $row['total_harga'];
-
+    $bibit_ayam = $row['bibit_ayam'];
+    $harga_pakan = $row['harga_pakan'];
+    $biaya_vaksin = $row['biaya_vaksin'];
+    $tenaga_kerja = $row['tenaga_kerja'];
+    
+   
 ?>
 
 <!DOCTYPE html>
@@ -342,22 +344,22 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tanggal Pembelian</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pembelian" value="<?php echo $pembelian; ?>">
+                                    <label>Bibit Ayam</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="bibit_ayam" value="<?php echo $bibit_ayam; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Jenis Pakan</label>
+                                    <label>Harga Pakan</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_pakan" value="<?php echo $jenis_pakan; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Stok Pakan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="stok_pakan" value="<?php echo $stok_pakan; ?>">
+                                    <label>Biaya OVK</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="biaya_vaksin" value="<?php echo $biaya_vaksin; ?>">
                                 </div>
-                                       <div class="form-group">
-                                    <label>Total Harga</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="total_harga" value="<?php echo $total_harga; ?>">
+                                <div class="form-group">
+                                    <label>Tenaga Kerja</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="tenaga_kerja" value="<?php echo $tenaga_kerja; ?>">
                                 </div>
-                                <hr>
+                                                        <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
