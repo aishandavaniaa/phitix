@@ -279,6 +279,7 @@ $sesLvl = $_SESSION['level'];
                             </div>
                         </li>
 
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -369,8 +370,8 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $total_harga; ?></td>
                                             <td>
                                             <a href="edit_pakan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+ 
+                                        <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
@@ -385,6 +386,8 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
+                
+                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
                 <!-- /.container-fluid -->
 
             </div>
