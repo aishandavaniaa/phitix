@@ -13,17 +13,16 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-    $id     = $_POST['id'];
-    $bibit_ayam   = $_POST['bibit_ayam'];
-    $harga_pakan   = $_POST['harga_pakan'];
-    $biaya_vaksin   = $_POST['biaya_vaksin'];
-    $tenaga_kerja   = $_POST['tenaga_kerja'];
+   
+    $pemasukan   = $_POST['pemasukan'];
+    $pengeluaran   = $_POST['pengeluaran'];
+   
     
 
-    $query = "UPDATE pengeluaran SET bibit_ayam='$bibit_ayam', harga_pakan='$harga_pakan', tenaga_kerja='$tenaga_kerja', biaya_vaksin='$biaya_vaksin' WHERE id='$id'";
+    $query = "UPDATE pendapatan SET pemasukan='$pemasukan', pengeluaran='$pengeluaran' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-    header('Location: pengeluaran.php');
+    header('Location: pendapatan.php');
 }
 $id = $_GET['id'];
 $query = "SELECT * FROM pengeluaran WHERE id='$id'";
@@ -31,11 +30,8 @@ $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
     $id = $row['id'];
-    $bibit_ayam = $row['bibit_ayam'];
-    $harga_pakan = $row['harga_pakan'];
-    $biaya_vaksin = $row['biaya_vaksin'];
-    $tenaga_kerja = $row['tenaga_kerja'];
-    
+    $pemasukan = $row['pemasukan'];
+    $pengeluaran = $row['pengeluaran'];  
    
 ?>
 
@@ -337,28 +333,25 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pengeluaran</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pakan</h1>
                             </div>
                             <form class="user" action="edit_pengeluaran.php" method="POST">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Bibit Ayam</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="bibit_ayam" value="<?php echo $bibit_ayam; ?>">
+                                    <label>Pemasukan</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Harga Pakan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="harga_pakan" value="<?php echo $harga_pakan; ?>">
+                                    <label>pengeluaran</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Biaya OVK</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="biaya_vaksin" value="<?php echo $biaya_vaksin; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Tenaga Kerja</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="tenaga_kerja" value="<?php echo $tenaga_kerja; ?>">
-                                </div>
+                               
                                                         <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
