@@ -320,7 +320,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Vaksin</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data OVK (Obat, Vaksin, Antibiotik)</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -387,6 +387,7 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
+                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
                 <!-- /.container-fluid -->
 
             </div>
