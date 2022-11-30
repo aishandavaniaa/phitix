@@ -10,7 +10,7 @@ if (!isset($_SESSION['id'])) {
 $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
