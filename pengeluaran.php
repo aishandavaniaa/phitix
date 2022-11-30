@@ -333,15 +333,11 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                        
                                             <th>Bibit Ayam</th>
                                             <th>Pembelian Pakan</th>
-                                            <th>Tanggal Beli Pakan</th>
-                                            <th>Biaya Vaksin</th>
-                                            <th>Tanggal Vaksin</th>
+                                            <th>Biaya OVK</th>
                                             <th>Tenaga Kerja</th>
-                                           
-                                        </tr>
+                                       </tr>
                                     </thead>
                                     <tbody>
                                         <?php
@@ -354,15 +350,15 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $id = $row['id'];
-                                                $pembelian_pakan = $row['pembelian_pakan'];
+                                                $bibit_ayam = $row['bibit_ayam'];
+                                                $harga_pakan = $row['harga_pakan'];
                                                 $biaya_vaksin = $row['biaya_vaksin'];
                                                 $tenaga_kerja = $row['tenaga_kerja'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $id; ?></td>
-                                            <td><?php echo $pembelian_pakan; ?></td>
+                                            <td><?php echo $bibit_ayam; ?></td>
+                                            <td><?php echo $harga_pakan; ?></td>
                                             <td><?php echo $biaya_vaksin; ?></td>
                                             <td><?php echo $tenaga_kerja; ?></td>
                                             <td>
