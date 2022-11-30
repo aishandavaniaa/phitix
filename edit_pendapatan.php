@@ -25,7 +25,7 @@ if( isset($_POST['update']) ){
     header('Location: pendapatan.php');
 }
 $id = $_GET['id'];
-$query = "SELECT * FROM pengeluaran WHERE id='$id'";
+$query = "SELECT * FROM pendapatan WHERE id='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
@@ -71,7 +71,7 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX<sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -333,9 +333,9 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pakan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pendapatan</h1>
                             </div>
-                            <form class="user" action="edit_pengeluaran.php" method="POST">
+                            <form class="user" action="edit_pendapatan.php" method="POST">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
@@ -344,13 +344,10 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>pengeluaran</label>
+                                    <label>Pengeluaran</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Biaya OVK</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="biaya_vaksin" value="<?php echo $biaya_vaksin; ?>">
-                                </div>
+                               
                                
                                                         <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
@@ -358,7 +355,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="pengeluaran.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="pendapatan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
