@@ -363,8 +363,9 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $pengeluaran; ?></td>
                                            
                                             <td>
+                                            <a href="insert_pendapatan.php?id= <?php echo $row['id']; ?>" button type="insert" class="btn btn-success btn-circle"><img src="add.png" /></button></i></a>
                                             <a href="edit_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-
+                                           
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
