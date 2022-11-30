@@ -339,7 +339,7 @@ while ($row = mysqli_fetch_array($result)){
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Edit Data Pakan</h1>
                             </div>
-                            <form class="user" action="edit_pakan.php" method="POST">
+                            <form class="user" action="edit_pengeluaran.php" method="POST">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
@@ -349,7 +349,7 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Harga Pakan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_pakan" value="<?php echo $jenis_pakan; ?>">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="harga_pakan" value="<?php echo $harga_pakan; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Biaya OVK</label>
@@ -365,7 +365,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="pakan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="pengeluaran.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
