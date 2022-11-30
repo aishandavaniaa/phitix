@@ -279,6 +279,7 @@ $sesLvl = $_SESSION['level'];
                             </div>
                         </li>
 
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -385,6 +386,7 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
+                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
                 <!-- /.container-fluid -->
 
             </div>
