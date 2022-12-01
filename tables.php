@@ -52,7 +52,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Phitix<sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -368,6 +368,9 @@ $sesLvl = $_SESSION['level'];
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
+                                            <td width="160">
+                                                <button type="submit" name="insert" class="btn btn-primary">Tambah</button>
+</td>
                                         </tr>
                                         <?php
                                             $no++;
