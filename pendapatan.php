@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Tanggal Periode</th>
                                             <th>Pemasukan</th>
                                             <th>Pengeluaran</th>
+                                            <th>Pendapatan</th>
                                             <th>Aksi</th>
                                             
                                         </tr>
@@ -358,6 +359,7 @@ $sesLvl = $_SESSION['level'];
                                                 $tanggal = $row['tanggal'];
                                                 $pemasukan = $row['pemasukan'];
                                                 $pengeluaran = $row['pengeluaran'];
+                                                $total = $pemasukan-$pengeluaran;
                                                 
                                         ?>
                                         <tr>
@@ -366,6 +368,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $tanggal; ?></td>
                                             <td><?php echo $pemasukan; ?></td>
                                             <td><?php echo $pengeluaran; ?></td>
+                                            <td><?php echo $total; ?></td>
                                            
                                             <td>
                                             <a href="edit_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
@@ -381,9 +384,9 @@ $sesLvl = $_SESSION['level'];
                                     </tbody>
                                 </table>
                                 <td width="160">
-                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
-</td>
-
+                                <a href="insert_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
+                             <a href="?aksi=insert_pendapatan.php"><?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
+                          </td> 
                             </div>
                         </div>
                     </div>
