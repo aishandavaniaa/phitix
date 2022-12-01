@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Ternak Ayam Phitix</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -322,11 +322,12 @@ $sesLvl = $_SESSION['level'];
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Pendapatan</h1>
-
+                    
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Pendapatan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Pendapatan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -334,9 +335,11 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Id</th>
+                                            <th>ID</th>
+                                            <th>Tanggal Periode</th>
                                             <th>Pemasukan</th>
                                             <th>Pengeluaran</th>
+                                            <th>Aksi</th>
                                             
                                         </tr>
                                     </thead>
@@ -352,22 +355,24 @@ $sesLvl = $_SESSION['level'];
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
                                                 $id = $row['id'];
+                                                $tanggal = $row['tanggal'];
                                                 $pemasukan = $row['pemasukan'];
                                                 $pengeluaran = $row['pengeluaran'];
-                                               
+                                                
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $id; ?></td>
+                                            <td><?php echo $tanggal; ?></td>
                                             <td><?php echo $pemasukan; ?></td>
                                             <td><?php echo $pengeluaran; ?></td>
                                            
                                             <td>
-                                            <a href="insert_pendapatan.php?id= <?php echo $row['id']; ?>" button type="insert" class="btn btn-success btn-circle"><img src="add.png" /></button></i></a>
                                             <a href="edit_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-                                           
+
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
+                                            
                                         </tr>
                                         <?php
                                             $no++;
@@ -375,6 +380,9 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
+                                <td width="160">
+                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
+</td>
 
                             </div>
                         </div>
@@ -451,7 +459,6 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -472,3 +479,7 @@ $sesLvl = $_SESSION['level'];
 </body>
 
 </html>
+
+
+
+
