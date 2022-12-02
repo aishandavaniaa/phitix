@@ -387,7 +387,12 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
-                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
+                <td width="160">
+                <div class="container-fluid">
+                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
+                
+      </div>
+   </div>
                 <!-- /.container-fluid -->
 
             </div>

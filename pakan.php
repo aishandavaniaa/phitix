@@ -382,7 +382,7 @@ $sesLvl = $_SESSION['level'];
                                 </table>
                                 <td width="160">
                                                 <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
-
+<td>
                             </div>
                         </div>
                     </div>
