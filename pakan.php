@@ -380,6 +380,8 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
+                                <td width="160">
+                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
 
                             </div>
                         </div>
@@ -387,7 +389,7 @@ $sesLvl = $_SESSION['level'];
 
                 </div>
                 
-                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
+                
                 <!-- /.container-fluid -->
 
             </div>
