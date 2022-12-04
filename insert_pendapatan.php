@@ -63,7 +63,7 @@ if(isset($_POST['insert_data'])) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PHITIX<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -81,7 +81,7 @@ if(isset($_POST['insert_data'])) {
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                TABLES
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -97,7 +97,7 @@ if(isset($_POST['insert_data'])) {
                      <a class="collapse-item" href="tables.php">User</a>
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
-                        <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="vaksin.php">Data OVK</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -318,6 +318,7 @@ if(isset($_POST['insert_data'])) {
                 </nav>
                 <!-- End of Topbar -->
     <div class="container">
+  
         <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
             <div class="card-body w-75 vh-50 ">
                 <!-- Nested Row within Card Body -->
@@ -348,7 +349,7 @@ if(isset($_POST['insert_data'])) {
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px round;">
-                                        <button type="submit" name="insert_data" class="btn btn-primary">Add Data</button>
+                                        <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
                                 
                                     	<button type="reset" name="delete_data" class="btn btn-danger">Clear</button>
                                     </div>

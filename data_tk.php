@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ternak Ayam Phitix</title>
+    <title>SB Admin 2 - Tables</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,7 +52,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Phitix<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -83,8 +83,7 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                       <a class="collapse-item" href="tables.php">User</a>
-                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
                         <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
@@ -322,12 +321,12 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data User</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table User</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Distribusi</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -336,15 +335,18 @@ $sesLvl = $_SESSION['level'];
                                         <tr>
                                             <th>No</th>
                                             <th>Id</th>
-                                            <th>Email</th>
-                                            <th>Nama</th>
-                                            <th>Level</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Customer</th>
+                                            <th>Tanggal</th>
+                                            <th>Kontak</th>
+                                            <th>Jumlah Ayam</th>
+                                            <th>Payment</th>
+                                            <th>Address</th>
+                                           
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM user_detail";
+                                            $query = "SELECT * FROM distribusi";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -353,23 +355,30 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id'];
-                                                $userMail = $row['user_email'];
-                                                $userName = $row['user_fullname'];
-                                                $userLevel = $row['level'];
+                                                $id = $row['id'];
+                                                $customer = $row['customer'];
+                                                $tanggal_distribusi = $row['tanggal_distribusi'];
+                                                $contact = $row['contact'];
+                                                $total_ayam = $row['total_ayam'];
+                                                $payment = $row['payment'];
+                                                 $address = $row['address'];
+
+
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
-                                            <td><?php echo $userMail; ?></td>
-                                            <td><?php echo $userName; ?></td>
-                                            <td><?php echo $userLevel; ?></td>
+                                            <td><?php echo $id; ?></td>
+                                            <td><?php echo $customer; ?></td>
+                                            <td><?php echo $tanggal_distribusi; ?></td>
+                                            <td><?php echo $contact; ?></td>
+                                            <td><?php echo $total_ayam; ?></td>
+                                            <td><?php echo $payment; ?></td>
+                                            <td><?php echo $address; ?></td>
                                             <td>
-                                            <a href="edit.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_distribusi.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
-                                            
                                         </tr>
                                         <?php
                                             $no++;
@@ -377,16 +386,12 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-                                <td width="160">
-                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
-</td>
 
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
                 <!-- /.container-fluid -->
 
             </div>
