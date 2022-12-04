@@ -373,7 +373,7 @@ $sesLvl = $_SESSION['level'];
                                             <td>
                                             <a href="edit_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_pendapatan.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>
@@ -381,11 +381,12 @@ $sesLvl = $_SESSION['level'];
                                             $no++;
                                             }
                                         ?>
-                                    </tbody>
+                                   </tbody>
                                 </table>
                                 <td width="160">
-                                <a href="insert_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
-                            
+                               
+                                
+                                <a href="insert_pendapatan.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
                           </td> 
                             </div>
                         </div>
@@ -417,9 +418,8 @@ $sesLvl = $_SESSION['level'];
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!--Delete Modal-->
-    <div class="modal fade" id="modalDelete">
+<!--Delete Modal-->
+<div class="modal fade" id="modalDelete">
         <div class="modal-dialog">
             <div class="modal-content" style="margin-top:100px;">
                 <div class="modal-header">
@@ -434,7 +434,6 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
-
     <!-- Javascript untuk popup modal Delete-->
     <script type="text/javascript">
     function confirmModal(delete_url){
