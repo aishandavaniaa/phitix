@@ -385,7 +385,7 @@ $sesLvl = $_SESSION['level'];
                                 </table>
                                 <td width="160">
                                 <a href="insert_pendapatan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
-                             <a href="?aksi=insert_pendapatan.php"><?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
+                            
                           </td> 
                             </div>
                         </div>

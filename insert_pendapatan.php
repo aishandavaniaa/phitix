@@ -342,6 +342,9 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputTanggal" name="tanggal" value="<?php echo $tanggal; ?>">
+                                </div>
+                                <div class="form-group">
                                     <label>Pemasukan</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
                                 </div>

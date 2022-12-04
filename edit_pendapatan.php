@@ -13,13 +13,13 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-   
+    $tanggal   = $_POST['tanggal'];
     $pemasukan   = $_POST['pemasukan'];
     $pengeluaran   = $_POST['pengeluaran'];
    
     
 
-    $query = "UPDATE pendapatan SET pemasukan='$pemasukan', pengeluaran='$pengeluaran' WHERE id='$id'";
+    $query = "UPDATE pendapatan SET tanggal='$tanggal', pemasukan='$pemasukan', pengeluaran='$pengeluaran' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: pendapatan.php');
@@ -30,6 +30,7 @@ $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
     $id = $row['id'];
+    $tanggal = $row['tanggal'];
     $pemasukan = $row['pemasukan'];
     $pengeluaran = $row['pengeluaran'];  
    
@@ -338,6 +339,10 @@ while ($row = mysqli_fetch_array($result)){
                             <form class="user" action="edit_pendapatan.php" method="POST">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Pemasukan</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="tanggal" value="<?php echo $tanggal; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Pemasukan</label>
