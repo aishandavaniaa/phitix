@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Ternak Ayam Phitix</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -321,32 +321,31 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
-
+                    <h1 class="h3 mb-2 text-gray-800">Data Tenaga Kerja</h1>
+                    
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Distribusi</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Tenaga Kerja</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Id</th>
-                                            <th>Nama Customer</th>
-                                            <th>Tanggal</th>
-                                            <th>Kontak</th>
-                                            <th>Jumlah Ayam</th>
-                                            <th>Payment</th>
-                                            <th>Address</th>
+                                            <th>ID Karyawan</th>
+                                            <th>Nama Karyawan</th>
+                                            <th>Jabatan</th>
+                                            <th>Gaji</th>
+                                           
                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM distribusi";
+                                            $query = "SELECT * FROM tenaga_kerja";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -356,28 +355,24 @@ $sesLvl = $_SESSION['level'];
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
                                                 $id = $row['id'];
-                                                $customer = $row['customer'];
-                                                $tanggal_distribusi = $row['tanggal_distribusi'];
-                                                $contact = $row['contact'];
-                                                $total_ayam = $row['total_ayam'];
-                                                $payment = $row['payment'];
-                                                 $address = $row['address'];
-
+                                                $id_karyawan = $row['id_karyawan'];
+                                                $nama_karyawan = $row['nama_karyawan'];
+                                                $jabatan = $row['jabatan'];
+                                                $gaji = $row['gaji'];
+                                                
 
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $id; ?></td>
-                                            <td><?php echo $customer; ?></td>
-                                            <td><?php echo $tanggal_distribusi; ?></td>
-                                            <td><?php echo $contact; ?></td>
-                                            <td><?php echo $total_ayam; ?></td>
-                                            <td><?php echo $payment; ?></td>
-                                            <td><?php echo $address; ?></td>
+                                            <td><?php echo $id_karyawan; ?></td>
+                                            <td><?php echo $nama_karyawan; ?></td>
+                                            <td><?php echo $jabatan; ?></td>
+                                            <td><?php echo $gaji; ?></td>
+                                    
                                             <td>
-                                            <a href="edit_distribusi.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_tk.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
@@ -387,6 +382,11 @@ $sesLvl = $_SESSION['level'];
                                     </tbody>
                                 </table>
 
+                                <td width="160">
+                               
+                                
+                                <a href="insert_pendapatan.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
+                          </td> 
                             </div>
                         </div>
                     </div>
@@ -417,9 +417,8 @@ $sesLvl = $_SESSION['level'];
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!--Delete Modal-->
-    <div class="modal fade" id="modalDelete">
+<!--Delete Modal-->
+<div class="modal fade" id="modalDelete">
         <div class="modal-dialog">
             <div class="modal-content" style="margin-top:100px;">
                 <div class="modal-header">
@@ -434,7 +433,6 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
-
     <!-- Javascript untuk popup modal Delete-->
     <script type="text/javascript">
     function confirmModal(delete_url){
@@ -462,7 +460,6 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -483,3 +480,7 @@ $sesLvl = $_SESSION['level'];
 </body>
 
 </html>
+
+
+
+
