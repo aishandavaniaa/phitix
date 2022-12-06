@@ -1,5 +1,5 @@
 <?php
-require("koneksi.php");
+require('koneksi.php');
 
 session_start();
 
@@ -7,10 +7,25 @@ if (!isset($_SESSION['id'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
     header('Location: login.php');
 }
+
 $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
+
+
+if(isset($_POST['insert_data'])) {
+
+    $id = $_POST['id'];
+    $tanggal   = $_POST['tanggal'];
+    $jumlah_masuk   = $_POST['jumlah_masuk'];
+    $mati   = $_POST['mati'];
+
+    $query = "INSERT INTO data_ayam (id, tanggal, jumlah_masuk, mati) VALUES ('$id', '$tanggal', '$jumlah_masuk', '$mati')";
+    $result = mysqli_query($koneksi, $query);
+    header('Location: ayam.php');
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,24 +38,20 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ternak Ayam Phitix</title>
+    <title>Edit</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
-
+<body class="bg-gradient-primary">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -52,7 +63,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Phitix<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -70,11 +81,11 @@ $sesLvl = $_SESSION['level'];
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                TABLES
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+           <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -83,25 +94,14 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                       <a class="collapse-item" href="tables.php">User</a>
+                     <a class="collapse-item" href="tables.php">User</a>
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
-                        <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
-                        <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
+                        <a class="collapse-item" href="vaksin.php">Data OVK</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
                     </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -306,7 +306,7 @@ $sesLvl = $_SESSION['level'];
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -317,81 +317,52 @@ $sesLvl = $_SESSION['level'];
 
                 </nav>
                 <!-- End of Topbar -->
+    <div class="container">
+  
+        <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
+            <div class="card-body w-75 vh-50 ">
+                <!-- Nested Row within Card Body -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data User</h1>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Table User</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Id</th>
-                                            <th>Email</th>
-                                            <th>Nama</th>
-                                            <th>Level</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $query = "SELECT * FROM user_detail";
-                                            $result = mysqli_query($koneksi, $query); 
-                                            $no = 1;      
-                                            if ($sesLvl == 1) {
-                                                $dis = "";    
-                                            }else{
-                                                $dis = "disabled";
-                                            }        
-                                            while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id'];
-                                                $userMail = $row['user_email'];
-                                                $userName = $row['user_fullname'];
-                                                $userLevel = $row['level'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
-                                            <td><?php echo $userMail; ?></td>
-                                            <td><?php echo $userName; ?></td>
-                                            <td><?php echo $userLevel; ?></td>
-                                            <td>
-                                            <a href="edit.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
-
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
-                                            </td>
-                                            
-                                        </tr>
-                                        <?php
-                                            $no++;
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                                <td width="160">
-                                <a href="insert_tables.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
-</td>
-
+                        
+                        <div class="p-2">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
                             </div>
+                            <form method="post" action="?">
+                            
+                                <div class="form-group">
+                                <label>ID</label>
+                                    <input type="number" class="form-control form-control-user" name="id">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal</label>
+                                    <input type="date" class="form-control form-control-user" name="tanggal">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jumlah Masuk</label>
+                                    <input type="number" class="form-control form-control-user" name="pemasukan">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mati</label>
+                                    <input type="number" class="form-control form-control-user" name="pengeluaran">
+                                </div>
+                                 <hr>
+                                <div class="form-group row" style="position: relative; float: right; ">
+                                    <div class="px-3" style="width: 150px round;">
+                                        <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
+                                
+                                    	<button type="reset" name="delete_data" class="btn btn-danger">Clear</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
                         </div>
                     </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
+                
+            
+        </div>
+    </div>
+    <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -407,36 +378,6 @@ $sesLvl = $_SESSION['level'];
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!--Delete Modal-->
-    <div class="modal fade" id="modalDelete">
-        <div class="modal-dialog">
-            <div class="modal-content" style="margin-top:100px;">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="text-align:center;">Hapus data ini?</h4>
-                    <button type="button" class="close" data-dismiss="modal" ariahidden="true">&times;</button>
-                </div>
-                <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
-                    <button type="button" class="btn btn-success btn-sm" datadismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Javascript untuk popup modal Delete-->
-    <script type="text/javascript">
-    function confirmModal(delete_url){
-        $('#modalDelete').modal('show', {backdrop: 'static'});
-        document.getElementById('delete_link').setAttribute('href' , delete_url);
-    }
-    </script>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -445,7 +386,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -473,7 +414,7 @@ $sesLvl = $_SESSION['level'];
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
 </body>
 
 </html>
+<?php  ?>
