@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>PHITIX</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
