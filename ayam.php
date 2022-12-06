@@ -378,9 +378,10 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-                                <td width="16 0">
-                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
+                                <td width="160">
+                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
 </td>
+
 
                             </div>
                         </div>

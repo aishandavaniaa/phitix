@@ -15,12 +15,12 @@ $sesLvl = $_SESSION['level'];
 
 if(isset($_POST['insert_data'])) {
 
-    $id = $_POST['id'];
-    $tanggal   = $_POST['tanggal'];
-    $jumlah_masuk   = $_POST['jumlah_masuk'];
-    $mati   = $_POST['mati'];
+    $userId = $_POST['id'];
+    $userMail   = $_POST['tanggal_masuk'];
+    $userName   = $_POST['jumlah_masuk'];
+    $userLevel  = $_POST['mati'];
 
-    $query = "INSERT INTO data_ayam (id, tanggal, jumlah_masuk, mati) VALUES ('$id', '$tanggal', '$jumlah_masuk', '$mati')";
+    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$userId', '$userMail', '$userName', '$userLevel')";
     $result = mysqli_query($koneksi, $query);
     header('Location: ayam.php');
 }
@@ -324,7 +324,7 @@ if(isset($_POST['insert_data'])) {
                 <!-- Nested Row within Card Body -->
 
                         
-                        <div class="p-2">
+                <div class="p-2">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
                             </div>
@@ -339,12 +339,12 @@ if(isset($_POST['insert_data'])) {
                                     <input type="date" class="form-control form-control-user" name="tanggal">
                                 </div>
                                 <div class="form-group">
-                                    <label>Jumlah Masuk</label>
-                                    <input type="number" class="form-control form-control-user" name="pemasukan">
+                                    <label>Jumlah masuk</label>
+                                    <input type="number" class="form-control form-control-user" name="jumlah_masuk">
                                 </div>
                                 <div class="form-group">
                                     <label>Mati</label>
-                                    <input type="number" class="form-control form-control-user" name="pengeluaran">
+                                    <input type="number" class="form-control form-control-user" name="mati">
                                 </div>
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
