@@ -326,7 +326,7 @@ if(isset($_POST['insert_data'])) {
                         
                 <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Data Ayam</h1>
                             </div>
                             <form method="post" action="?">
                             
