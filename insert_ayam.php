@@ -16,13 +16,13 @@ $sesLvl = $_SESSION['level'];
 if(isset($_POST['insert_data'])) {
 
     $userId = $_POST['id'];
-    $userMail   = $_POST['tanggal_masuk'];
-    $userName   = $_POST['jumlah_masuk'];
-    $userLevel  = $_POST['mati'];
+    $tanggal   = $_POST['tanggal_masuk'];
+    $jumlah   = $_POST['jumlah_masuk'];
+    $level  = $_POST['mati'];
 
-    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$userId', '$userMail', '$userName', '$userLevel')";
+    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$userId', '$tanggal', '$jumlah', '$level')";
     $result = mysqli_query($koneksi, $query);
-    header('Location: ayam.php');
+    header('Location: pendapatan.php');
 }
 ?>
 
@@ -94,10 +94,10 @@ if(isset($_POST['insert_data'])) {
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                     <a class="collapse-item" href="tables.php">User</a>
-                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data OVK</a>
+                        <a class="collapse-item" href="data_tk.php">Data Tenaga Kerja</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -322,7 +322,6 @@ if(isset($_POST['insert_data'])) {
         <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
             <div class="card-body w-75 vh-50 ">
                 <!-- Nested Row within Card Body -->
-
                         
                 <div class="p-2">
                             <div class="text-center">
@@ -346,7 +345,7 @@ if(isset($_POST['insert_data'])) {
                                     <label>Mati</label>
                                     <input type="number" class="form-control form-control-user" name="mati">
                                 </div>
-                                 <hr>
+                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px round;">
                                         <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
