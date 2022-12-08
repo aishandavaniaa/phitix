@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Nama Karyawan</th>
                                             <th>Jabatan</th>
                                             <th>Gaji</th>
+                                            <th>Aksi</th>
                                            
                                            
                                         </tr>
@@ -354,7 +355,7 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $id = $row['id'];
+                                                
                                                 $id_karyawan = $row['id_karyawan'];
                                                 $nama_karyawan = $row['nama_karyawan'];
                                                 $jabatan = $row['jabatan'];
@@ -370,18 +371,18 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $gaji; ?></td>
                                     
                                             <td>
-                                            <a href="edit_tk.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_data_tk.php?id= <?php echo $row['id_karyawan']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_pendapatan.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
+                                            
                                         </tr>
                                         <?php
                                             $no++;
                                             }
                                         ?>
-                                    </tbody>
+                                   </tbody>
                                 </table>
-
                                 <td width="160">
                                
                                 
