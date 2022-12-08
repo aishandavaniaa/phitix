@@ -15,12 +15,12 @@ $sesLvl = $_SESSION['level'];
 
 if(isset($_POST['insert_data'])) {
 
-    $id = $_POST['id'];
-    $nama   = $_POST['nama'];
+    $id_karyawan = $_POST['id_karyawan'];
+    $nama_karyawan   = $_POST['nama_karyawan'];
     $jabatan   = $_POST['jabatan'];
     $gaji  = $_POST['gaji'];
 
-    $query = "INSERT INTO tenaga_kerja (id, nama, jabatan, gaji) VALUES ('$id', '$nama', '$jabatan', '$gaji')";
+    $query = "INSERT INTO tenaga_kerja (id_karyawan, nama_karyawan, jabatan, gaji) VALUES ('$id_karyawan', '$nama_karyawan', '$jabatan', '$gaji')";
     $result = mysqli_query($koneksi, $query);
     header('Location: data_tk.php');
 }
@@ -331,12 +331,12 @@ if(isset($_POST['insert_data'])) {
                             <form method="post" action="?">
                             
                                 <div class="form-group">
-                                <label>ID</label>
-                                    <input type="number" class="form-control form-control-user" name="id">
+                                <label>ID Karyawan</label>
+                                    <input type="number" class="form-control form-control-user" name="id_karyawan">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama</label>
-                                    <input type="text" class="form-control form-control-user" name="nama">
+                                    <label>Nama Karyawan</label>
+                                    <input type="text" class="form-control form-control-user" name="nama_karyawan">
                                 </div>
                                 <div class="form-group">
                                     <label>Jabatan</label>

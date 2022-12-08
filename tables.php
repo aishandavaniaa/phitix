@@ -10,7 +10,7 @@ if (!isset($_SESSION['id'])) {
 $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ternak Ayam Phitix</title>
+    <title>PHITIX</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,7 +52,7 @@ $sesLvl = $_SESSION['level'];
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Phitix<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -70,7 +70,7 @@ $sesLvl = $_SESSION['level'];
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Data Ternak Ayam | PHITIX
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -83,17 +83,16 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                       <a class="collapse-item" href="tables.php">User</a>
-                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
-                        <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="vaksin.php">Data OVK</a>
                         <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
-                    </div>
                 </div>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
