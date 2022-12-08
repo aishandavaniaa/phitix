@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Ternak Ayam Phitix</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -83,8 +83,7 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                     <a class="collapse-item" href="tables.php">User</a>
-                        
+                    <a class="collapse-item" href="tables.php">User</a>
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
@@ -98,8 +97,8 @@ $sesLvl = $_SESSION['level'];
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+             <!-- Sidebar Toggler (Sidebar) -->
+             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
@@ -318,14 +317,15 @@ $sesLvl = $_SESSION['level'];
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                 <!-- Begin Page Content -->
+                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Ayam</h1>
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Data Ayam</h1>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Table Ayam</h6>
                         </div>
@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Tanggal Masuk</th>
                                             <th>Jumlah Masuk</th>
                                             <th>Mati</th>
+                                            <th>Aksi</th>
                                            
                                         </tr>
                                     </thead>
@@ -369,20 +370,25 @@ $sesLvl = $_SESSION['level'];
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
-                                        </tr>
+                                             
+                                            </tr>
                                         <?php
                                             $no++;
                                             }
                                         ?>
                                     </tbody>
                                 </table>
+                                <td width="160">
+                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
+</td>
+
 
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
+                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -452,7 +458,6 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -473,3 +478,5 @@ $sesLvl = $_SESSION['level'];
 </body>
 
 </html>
+
+

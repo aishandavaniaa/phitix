@@ -87,6 +87,7 @@ $sesLvl = $_SESSION['level'];
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -377,7 +378,7 @@ $sesLvl = $_SESSION['level'];
                                     </tbody>
                                 </table>
                                 <td width="160">
-                                                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
+                                <a href="insert_tables.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
 </td>
 
                             </div>
@@ -385,7 +386,6 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
-                
                 <!-- /.container-fluid -->
 
             </div>

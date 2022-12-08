@@ -12,29 +12,20 @@ $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
-if( isset($_POST['update']) ){
-    $tanggal   = $_POST['tanggal'];
-    $pemasukan   = $_POST['pemasukan'];
-    $pengeluaran   = $_POST['pengeluaran'];
-   
-    
 
-    $query = "UPDATE pendapatan SET tanggal='$tanggal', pemasukan='$pemasukan', pengeluaran='$pengeluaran' WHERE id='$id'";
-    echo $query;
+if(isset($_POST['insert_data'])) {
+
+    $userId = $_POST['id'];
+    $userMail = $_POST['email'];
+    $userName = $_POST['nama'];
+    $level  = $_POST['level'];
+
+    $query = "INSERT INTO user_detail (id, email , nama, level) VALUES ('$userId', '$userMail', '$userName', '$level')";
     $result = mysqli_query($koneksi, $query);
-    header('Location: pendapatan.php');
+    header('Location: tables.php');
 }
-$id = $_GET['id'];
-$query = "SELECT * FROM pendapatan WHERE id='$id'";
-$result = mysqli_query($koneksi, $query) or die(mysql_error());
-//$nomor = 1;
-while ($row = mysqli_fetch_array($result)){
-    $id = $row['id'];
-    $tanggal = $row['tanggal'];
-    $pemasukan = $row['pemasukan'];
-    $pengeluaran = $row['pengeluaran'];  
-   
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +63,7 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PHITIX<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -90,7 +81,7 @@ while ($row = mysqli_fetch_array($result)){
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                TABLES
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -106,7 +97,7 @@ while ($row = mysqli_fetch_array($result)){
                      <a class="collapse-item" href="tables.php">User</a>
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
-                        <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="vaksin.php">Data OVK</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -246,12 +237,12 @@ while ($row = mysqli_fetch_array($result)){
                                     <div class="font-weight-bold">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
                                             problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fo wler · 58m</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/phitix.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -327,40 +318,40 @@ while ($row = mysqli_fetch_array($result)){
                 </nav>
                 <!-- End of Topbar -->
     <div class="container">
+  
         <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
             <div class="card-body w-75 vh-50 ">
                 <!-- Nested Row within Card Body -->
 
-
+                        
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Data User</h1>
                             </div>
-                            <form class="user" action="edit_pendapatan.php" method="POST">
+                            <form method="post" action="?">
+                            
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
+                                <label>ID</label>
+                                    <input type="number" class="form-control form-control-user" name="id">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="tanggal" value="<?php echo $tanggal; ?>">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control form-control-user" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
+                                    <label>Nama</label>
+                                    <input type="text" class="form-control form-control-user" name="nama">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pengeluaran</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
+                                    <label>Level</label>
+                                    <input type="number" class="form-control form-control-user" name="level">
                                 </div>
-                               
-                               
-                                                        <hr>
+                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
-                                    <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
-                                    </div>
-                                    <div style="width: 125px;">
-                                        <a href="pendapatan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                    <div class="px-3" style="width: 150px round;">
+                                        <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
+                                
+                                    	<button type="reset" name="delete_data" class="btn btn-danger">Clear</button>
                                     </div>
                                 </div>
                             </form>
@@ -426,4 +417,5 @@ while ($row = mysqli_fetch_array($result)){
 </body>
 
 </html>
-<?php } ?>
+<?php  
+?>

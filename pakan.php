@@ -23,7 +23,7 @@ $sesLvl = $_SESSION['level'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>PHITIX</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -83,10 +83,10 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                                                      <a class="collapse-item" href="tables.php">User</a>
-                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -380,17 +380,16 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-
+                                <td width="160">
+                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
+                                
+<td>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
-                <td width="160">
-                                <a href="insert_pakan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
-                             <a href="?aksi=insert_pakan.php"><?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
-                          
+   
                 <!-- /.container-fluid -->
 
             </div>
