@@ -335,7 +335,7 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID</th>
+                                            <th>ID Pendapatan</th>
                                             <th>Tanggal Periode</th>
                                             <th>Pemasukan</th>
                                             <th>Pengeluaran</th>
