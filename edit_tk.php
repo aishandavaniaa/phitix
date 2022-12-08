@@ -13,26 +13,27 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-    $tanggal   = $_POST['tanggal'];
-    $pemasukan   = $_POST['pemasukan'];
-    $pengeluaran   = $_POST['pengeluaran'];
-   
+    $id  = $_POST['id_karyawan'];
+    $nama_karyawan   = $_POST['nama_karyawan'];
+    $jabatan   = $_POST['jabatan'];
+    $gaji   = $_POST['gaji'];
+    
     
 
-    $query = "UPDATE pendapatan SET tanggal='$tanggal', pemasukan='$pemasukan', pengeluaran='$pengeluaran' WHERE id='$id'";
+    $query = "UPDATE tenaga_kerja SET nama_karyawan='$nama_karyawan', jabatan='$jabatan', gaji='$gaji' WHERE id_karyawan='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-    header('Location: pendapatan.php');
+    header('Location: data_tk.php');
 }
 $id = $_GET['id'];
-$query = "SELECT * FROM pendapatan WHERE id='$id'";
+$query = "SELECT * FROM tenaga_kerja WHERE id_karyawan='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id = $row['id'];
-    $tanggal = $row['tanggal'];
-    $pemasukan = $row['pemasukan'];
-    $pengeluaran = $row['pengeluaran'];  
+    $id_karyawan = $row['id_karyawan'];
+    $nama_karyawan = $row['nama_karyawan'];
+    $jabatan = $row['jabatan'];
+    $gaji = $row['gaji'];  
    
 ?>
 
@@ -334,23 +335,23 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Data Karyawan</h1>
                             </div>
-                            <form class="user" action="edit_pendapatan.php" method="POST">
+                            <form class="user" action="edit_tk.php" method="POST">
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
+                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id_karyawan" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="tanggal" value="<?php echo $tanggal; ?>">
+                                    <label>Nama Karyawan</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="nama_karyawan" value="<?php echo $nama_karyawan; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
+                                    <label>Jabatan</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="jabatan" value="<?php echo $jabatan; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pengeluaran</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
+                                    <label>Gaji</label>
+                                    <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="gaji" value="<?php echo $gaji; ?>">
                                 </div>
                                
                                
@@ -360,7 +361,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="pendapatan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="data_tk.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>

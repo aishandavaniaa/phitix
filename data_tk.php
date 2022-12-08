@@ -46,13 +46,13 @@ $sesLvl = $_SESSION['level'];
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
- 
-        <!-- Sidebar - Brand -->
- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -83,10 +83,10 @@ $sesLvl = $_SESSION['level'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                    <a class="collapse-item" href="tables.php">User</a>
-                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
+                        <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -97,8 +97,8 @@ $sesLvl = $_SESSION['level'];
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-             <!-- Sidebar Toggler (Sidebar) -->
-             <div class="text-center d-none d-md-inline">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
@@ -317,17 +317,17 @@ $sesLvl = $_SESSION['level'];
                 </nav>
                 <!-- End of Topbar -->
 
-                 <!-- Begin Page Content -->
-                 <div class="container-fluid">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Tenaga Kerja</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Karyawan</h1>
                     
                     <!-- DataTales Example -->
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Ayam</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Karyawan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -340,12 +340,11 @@ $sesLvl = $_SESSION['level'];
                                             <th>Jabatan</th>
                                             <th>Gaji</th>
                                             <th>Aksi</th>
-                                           
-                                           
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
+                                    <?php
                                             $query = "SELECT * FROM tenaga_kerja";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
@@ -367,23 +366,26 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $nama_karyawan; ?></td>
                                             <td><?php echo $jabatan; ?></td>
                                             <td><?php echo $gaji; ?></td>
+                                            
+                                           
                                             <td>
-                                            <a href="edit_tk.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_tk.php?id= <?php echo $row['id_karyawan']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id_karyawan']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
-                                             
-                                            </tr>
+                                            
+                                        </tr>
                                         <?php
                                             $no++;
                                             }
                                         ?>
-                                    </tbody>
+                                   </tbody>
                                 </table>
                                 <td width="160">
-                                <a href="insert_tk.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
-</td>
-
+                               
+                                
+                                <a href="insert_tk.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
+                          </td> 
                             </div>
                         </div>
                     </div>
