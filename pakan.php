@@ -380,8 +380,7 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-                                <td width="160">
-                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
+                                
                                 
 <td>
                             </div>
@@ -389,6 +388,8 @@ $sesLvl = $_SESSION['level'];
                     </div>
 
                 </div>
+                <td width="160">
+                                <a href="insert_pakan.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
    
                 <!-- /.container-fluid -->
 
