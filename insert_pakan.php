@@ -12,7 +12,8 @@ $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
-if( isset($_POST['insert']) ){
+if( isset($_POST['insert_data']) ){
+    
     
     $tanggal   = $_POST['tanggal'];
     $jenispakan   = $_POST['jenispakan'];
