@@ -15,14 +15,14 @@ $sesLvl = $_SESSION['level'];
 
 if(isset($_POST['insert_data'])) {
 
-    $userId = $_POST['id'];
-    $tanggal   = $_POST['tanggal_masuk'];
-    $jumlah   = $_POST['jumlah_masuk'];
-    $level  = $_POST['mati'];
+    $id = $_POST['id'];
+    $tanggal_masuk   = $_POST['tanggal_masuk'];
+    $jumlah_masuk   = $_POST['jumlah_masuk'];
+    $mati  = $_POST['mati'];
 
-    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$userId', '$tanggal', '$jumlah', '$level')";
+    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$id', '$tanggal_masuk', '$jumlah_masuk', '$mati')";
     $result = mysqli_query($koneksi, $query);
-    header('Location: pendapatan.php');
+    header('Location: ayam.php');
 }
 ?>
 
@@ -38,7 +38,7 @@ if(isset($_POST['insert_data'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Edit</title>
+    <title>Edit Data Ayam</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -334,11 +334,11 @@ if(isset($_POST['insert_data'])) {
                                     <input type="number" class="form-control form-control-user" name="id">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tanggal</label>
-                                    <input type="date" class="form-control form-control-user" name="tanggal">
+                                <label>Tanggal Masuk</label>
+                                    <input type="date" class="form-control form-control-user" name="tanggal_masuk">
                                 </div>
                                 <div class="form-group">
-                                    <label>Jumlah masuk</label>
+                                <label>Jumlah masuk</label>
                                     <input type="number" class="form-control form-control-user" name="jumlah_masuk">
                                 </div>
                                 <div class="form-group">

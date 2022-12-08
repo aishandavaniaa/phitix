@@ -354,21 +354,21 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $userId = $row['id'];
-                                                $userMail = $row['tanggal_masuk'];
-                                                $userName = $row['jumlah_masuk'];
-                                                $userLevel = $row['mati'];
+                                                $id = $row['id'];
+                                                $tanggal_masuk = $row['tanggal_masuk'];
+                                                $jumlah_masuk = $row['jumlah_masuk'];
+                                                $mati = $row['mati'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $userId; ?></td>
-                                            <td><?php echo $userMail; ?></td>
-                                            <td><?php echo $userName; ?></td>
-                                            <td><?php echo $userLevel; ?></td>
+                                            <td><?php echo $id; ?></td>
+                                            <td><?php echo $tanggal_masuk; ?></td>
+                                            <td><?php echo $jumlah_masuk; ?></td>
+                                            <td><?php echo $mati; ?></td>
                                             <td>
                                             <a href="edit_ayam.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_ayam.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                              
                                             </tr>

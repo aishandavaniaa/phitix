@@ -341,15 +341,15 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Masuk</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_masuk" value="<?php echo $tanggal_masuk; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_masuk" value="<?php echo $tanggal_masuk; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Jumlah Masuk</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jumlah_masuk" value="<?php echo $jumlah_masuk; ?>">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="jumlah_masuk" value="<?php echo $jumlah_masuk; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Mati</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="mati" value="<?php echo $mati; ?>">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputUsername" name="mati" value="<?php echo $mati; ?>">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
