@@ -3,7 +3,7 @@ require('koneksi.php');
 
 session_start();
 
-if (!isset($_SESSION['id'])) { 
+if (!isset($_SESSION['id'])) {
     $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
     header('Location: login.php');
 }
@@ -15,13 +15,12 @@ $sesLvl = $_SESSION['level'];
 
 if(isset($_POST['insert_data'])) {
 
-    $id = $_POST['id'];
+    $userId = $_POST['id'];
     $userMail = $_POST['email'];
     $userName = $_POST['nama'];
     $level  = $_POST['level'];
-    
 
-    $query = "INSERT INTO data_ayam (id, email , nama, level) VALUES ('$id', '$userMail', '$userName', '$level')";
+    $query = "INSERT INTO user_detail (id, email , nama, level) VALUES ('$userId', '$userMail', '$userName', '$level')";
     $result = mysqli_query($koneksi, $query);
     header('Location: tables.php');
 }
