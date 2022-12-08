@@ -387,7 +387,10 @@ $sesLvl = $_SESSION['level'];
 
                 </div>
                 
-                <p> <button type="button" class="btn btn-info">Tambah Data</button> </p>
+                <td width="160">
+                                <a href="insert_pakan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
+                             <a href="?aksi=insert_pakan.php"><?php echo $row['id']; ?>" class="btn btn-primary">Tambah Data</a>
+                          
                 <!-- /.container-fluid -->
 
             </div>
