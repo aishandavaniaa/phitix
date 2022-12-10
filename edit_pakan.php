@@ -345,7 +345,7 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Pembelian</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pembelian" value="<?php echo $pembelian; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputEmail" name="pembelian" value="<?php echo $pembelian; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Jenis Pakan</label>
@@ -353,15 +353,15 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Stok Pakan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="stok_pakan" value="<?php echo $stok_pakan; ?>">
+                                    <input type="number" class="form-control form-control-user input" id="jmlmasuk" name="stok_pakan" value="<?php echo $stok_pakan; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Harga per Kg</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="harga_kg" value="<?php echo $harga_kg; ?>">
+                                    <input type="number" class="form-control form-control-user input" id="hargasatuan"  name="harga_kg" value="<?php echo $harga_kg; ?>">
                                 </div>
                                        <div class="form-group">
                                     <label>Total Harga</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="total_harga" value="<?php echo $total_harga; ?>">
+                                    <input type="number" class="form-control form-control-user" id="result"  name="total_harga" value="<?= $total_harga ?>">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
@@ -415,23 +415,26 @@ while ($row = mysqli_fetch_array($result)){
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
-    <script src="jquery.min.js"></script>
-    <script src="bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="jquery.easing.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="sb-admin-2.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="jquery.dataTables.min.js"></script>
-    <script src="dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="datatables-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Hitung ototatis -->
+    <script src="js/calc.js"></script>
+
 </body>
 
 </html>
