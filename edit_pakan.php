@@ -17,9 +17,10 @@ if( isset($_POST['update']) ){
     $pembelian   = $_POST['pembelian'];
     $jenis_pakan   = $_POST['jenis_pakan'];
     $stok_pakan   = $_POST['stok_pakan'];
+    $harga_kg = $_POST['harga_kg'];
     $total_harga   = $_POST['total_harga'];
 
-    $query = "UPDATE detail_pakan SET pembelian='$pembelian', jenis_pakan='$jenis_pakan', stok_pakan='$stok_pakan', total_harga='$total_harga' WHERE id='$id'";
+    $query = "UPDATE detail_pakan SET pembelian='$pembelian', jenis_pakan='$jenis_pakan', stok_pakan='$stok_pakan', harga_kg='$harga_kg', total_harga='$total_harga' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: pakan.php');
@@ -33,6 +34,7 @@ while ($row = mysqli_fetch_array($result)){
     $pembelian = $row['pembelian'];
     $jenis_pakan = $row['jenis_pakan'];
     $stok_pakan = $row['stok_pakan'];
+    $harga_kg = $row['harga_kg'];
     $total_harga = $row['total_harga'];
 
 ?>
@@ -352,6 +354,10 @@ while ($row = mysqli_fetch_array($result)){
                                 <div class="form-group">
                                     <label>Stok Pakan</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="stok_pakan" value="<?php echo $stok_pakan; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Harga per Kg</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="harga_kg" value="<?php echo $harga_kg; ?>">
                                 </div>
                                        <div class="form-group">
                                     <label>Total Harga</label>
