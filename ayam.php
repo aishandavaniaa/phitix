@@ -338,6 +338,8 @@ $sesLvl = $_SESSION['level'];
                                             <th>Id</th>
                                             <th>Tanggal Masuk</th>
                                             <th>Jumlah Masuk</th>
+                                            <th>Harga Satuan</th>
+                                            <th>Total Harga</th>
                                             <th>Mati</th>
                                             <th>Aksi</th>
                                            
@@ -357,6 +359,8 @@ $sesLvl = $_SESSION['level'];
                                                 $id = $row['id'];
                                                 $tanggal_masuk = $row['tanggal_masuk'];
                                                 $jumlah_masuk = $row['jumlah_masuk'];
+                                                $harga_satuan = $row['harga_satuan'];
+                                                $total_harga = $row['total_harga'];
                                                 $mati = $row['mati'];
                                         ?>
                                         <tr>
@@ -364,6 +368,8 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $id; ?></td>
                                             <td><?php echo $tanggal_masuk; ?></td>
                                             <td><?php echo $jumlah_masuk; ?></td>
+                                            <td><?php echo $harga_satuan; ?></td>
+                                            <td><?php echo $total_harga; ?></td>
                                             <td><?php echo $mati; ?></td>
                                             <td>
                                             <a href="edit_ayam.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
