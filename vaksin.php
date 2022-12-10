@@ -340,7 +340,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Biaya OVK</th>
                                             <th>Total Biaya</th>
                                             <th>Next OVK</th>
-                                            
+                                            <th>Aksi</th>
                                            
                                         </tr>
                                     </thead>
@@ -385,20 +385,17 @@ $sesLvl = $_SESSION['level'];
                                             $no++;
                                             }
                                         ?>
-                                    </tbody>
+                                  </tbody>
                                 </table>
+                                <td width="160">
+                                <a href="insert_tables.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
+</td>
 
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <td width="160">
-                <div class="container-fluid">
-                <button type="submit" name="hitung" class="btn btn-primary">Tambah Data<i></button>
-                
-      </div>
-   </div>
                 <!-- /.container-fluid -->
 
             </div>
