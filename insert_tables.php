@@ -15,9 +15,9 @@ $sesLvl = $_SESSION['level'];
 
 if(isset($_POST['insert_data'])) {
 
-    $userId = $_POST['id'];
-    $userMail = $_POST['email'];
-    $userName = $_POST['nama'];
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $nama = $_POST['nama'];
     $level  = $_POST['level'];
 
     $query = "INSERT INTO user_detail (id, email , nama, level) VALUES ('$userId', '$userMail', '$userName', '$level')";
