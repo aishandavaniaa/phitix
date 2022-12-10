@@ -18,9 +18,11 @@ if(isset($_POST['insert_data'])) {
     $id = $_POST['id'];
     $tanggal_masuk   = $_POST['tanggal_masuk'];
     $jumlah_masuk   = $_POST['jumlah_masuk'];
+    $harga_satuan = $_POST['harga_satuan'];
+    $total_harga = $_POST['total_harga'];
     $mati  = $_POST['mati'];
 
-    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, mati) VALUES ('$id', '$tanggal_masuk', '$jumlah_masuk', '$mati')";
+    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, harga_satuan, total_harga, mati) VALUES ('$id', '$tanggal_masuk', '$jumlah_masuk', '$harga_satuan', '$total_harga', '$mati')";
     $result = mysqli_query($koneksi, $query);
     header('Location: ayam.php');
 }
@@ -340,6 +342,14 @@ if(isset($_POST['insert_data'])) {
                                 <div class="form-group">
                                 <label>Jumlah masuk</label>
                                     <input type="number" class="form-control form-control-user" name="jumlah_masuk">
+                                </div>
+                                <div class="form-group">
+                                <label>Harga Satuan</label>
+                                    <input type="number" class="form-control form-control-user" name="harga_satuan">
+                                </div>
+                                <div class="form-group">
+                                <label>Total Harga</label>
+                                    <input type="number" class="form-control form-control-user" name="total_harga">
                                 </div>
                                 <div class="form-group">
                                     <label>Mati</label>
