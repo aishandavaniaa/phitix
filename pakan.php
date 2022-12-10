@@ -341,7 +341,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Stok Pakan</th>
                                             <th>Harga KG</th>
                                             <th>Total Harga</th>
-                                            <th></th>
+                                            <th>Aksi</th>
                                            
                                         </tr>
                                     </thead>
@@ -375,7 +375,7 @@ $sesLvl = $_SESSION['level'];
                                             <td>
                                             <a href="edit_pakan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
  
-                                        <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                        <a href="#" class="btn btn-danger btn-circle" onClick="confirmModal('hapus_pakan.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
