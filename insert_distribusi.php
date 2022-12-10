@@ -24,8 +24,7 @@ if(isset($_POST['insert_data'])) {
     $payment = $_POST['payment'];
     $address = $_POST['address'];
 
-    $query = "INSERT INTO distribusi (id, customer, tanggal_distribusi, contact, total_ayam, harga_satuan, payment, address) 
-    VALUES ('$id', '$customer', '$tanggal_distribusi', '$contact', '$total_ayam', '$harga_satuan', '$payment', '$address')";
+    $query = "INSERT INTO distribusi (null, id, customer, tanggal_distribusi, contact, total_ayam, harga_satuan, payment, address) VALUES ('$id', '$customer', '$tanggal_distribusi', '$contact', '$total_ayam', '$harga_satuan', '$payment', '$address')";
     $result = mysqli_query($koneksi, $query);
     header('Location: distribusi.php');
 }
@@ -43,7 +42,7 @@ if(isset($_POST['insert_data'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Edit</title>
+    <title>Insert Distribusi</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -86,7 +85,7 @@ if(isset($_POST['insert_data'])) {
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                TABLES
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -331,7 +330,7 @@ if(isset($_POST['insert_data'])) {
                         
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Data Distribusi</h1>
                             </div>
                             <form method="post" action="?">
                             
@@ -340,16 +339,28 @@ if(isset($_POST['insert_data'])) {
                                     <input type="number" class="form-control form-control-user" name="id">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tanggal</label>
-                                    <input type="date" class="form-control form-control-user" name="tanggal">
+                                    <label>Pelanggan</label>
+                                    <input type="date" class="form-control form-control-user" name="customer">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="number" class="form-control form-control-user" name="pemasukan">
+                                    <label>Tanggal Distribusi</label>
+                                    <input type="date" class="form-control form-control-user" name="tanggal_distrbusi">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pengeluaran</label>
-                                    <input type="number" class="form-control form-control-user" name="pengeluaran">
+                                    <label>No Telp</label>
+                                    <input type="number" class="form-control form-control-user" name="contact">
+                                </div>
+                                <div class="form-group">
+                                    <label>Toatal Ayam</label>
+                                    <input type="number" class="form-control form-control-user" name="total_ayam">
+                                </div>
+                                <div class="form-group">
+                                    <label>Harga Satuan</label>
+                                    <input type="date" class="form-control form-control-user" name="harga_satuan">
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment</label>
+                                    <input type="date" class="form-control form-control-user" name="payment">
                                 </div>
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
