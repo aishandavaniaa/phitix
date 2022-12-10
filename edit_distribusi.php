@@ -18,11 +18,12 @@ if( isset($_POST['update']) ){
     $tanggal_distribusi   = $_POST['tanggal_distribusi'];
     $contact   = $_POST['contact'];
     $total_ayam   = $_POST['total_ayam'];
+    $harga_satuan = $_POST['harga_satuan'];
     $payment   = $_POST['payment'];
     $address   = $_POST['address'];
 
 
-    $query = "UPDATE distribusi SET customer='$customer', tanggal_distribusi='$tanggal_distribusi', contact='$contact', total_ayam='$total_ayam', payment='$payment', address='$address' WHERE id='$id'";
+    $query = "UPDATE distribusi SET customer='$customer', tanggal_distribusi='$tanggal_distribusi', contact='$contact', total_ayam='$total_ayam', harga_satuan='$harga_satuan', payment='$payment', address='$address' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: distribusi.php');
@@ -37,6 +38,7 @@ while ($row = mysqli_fetch_array($result)){
     $tanggal_distribusi = $row['tanggal_distribusi'];
     $contact = $row['contact'];
     $total_ayam = $row['total_ayam'];
+    $harga_satuan = $row['harga_satuan'];
     $payment   = $row['payment'];
      $address   = $row['address'];
 
@@ -361,6 +363,10 @@ while ($row = mysqli_fetch_array($result)){
                                     <div class="form-group">
                                     <label>Jumlah Ayam</label>
                                     <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="total_ayam" value="<?php echo $total_ayam; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Harga Satuan</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="harga_satuan" value="<?php echo $harga_satuan; ?>">
                                 </div>
                                     <div class="form-group">
                                     <label>Payment</label>
