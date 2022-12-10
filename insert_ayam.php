@@ -341,15 +341,15 @@ if(isset($_POST['insert_data'])) {
                                 </div>
                                 <div class="form-group">
                                 <label>Jumlah masuk</label>
-                                    <input type="number" class="form-control form-control-user" name="jumlah_masuk">
+                                    <input type="number" class="form-control form-control-user input" id="jmlmasuk" name="jumlah_masuk">
                                 </div>
                                 <div class="form-group">
                                 <label>Harga Satuan</label>
-                                    <input type="number" class="form-control form-control-user" name="harga_satuan">
+                                    <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga_satuan">
                                 </div>
                                 <div class="form-group">
                                 <label>Total Harga</label>
-                                    <input type="number" class="form-control form-control-user" name="total_harga">
+                                    <input type="number" class="form-control form-control-user" id="result" name="total_harga">
                                 </div>
                                 <div class="form-group">
                                     <label>Mati</label>
@@ -423,6 +423,9 @@ if(isset($_POST['insert_data'])) {
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Calc -->
+    <script src="js/calc.js"></script>
 </body>
 
 </html>
