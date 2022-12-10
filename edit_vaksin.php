@@ -13,29 +13,44 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-    $id     = $_POST['id'];
-    $tanggal_ovk   = $_POST['tanggal_ovk'];
-    $jenis_ovk  = $_POST['jenis_ovk'];
-    $next_ovk  = $_POST['next_ovk'];
-    $jumlah_ovk  = $_POST['jumlah_ovk'];
-    $biaya_ovk  = $_POST['biaya_ovk'];
+    $id = $_POST['id'];
+    $tanggal_ovk   = $_POST['tanggal_vaksin'];
+    $jenis_ovk  = $_POST['jenis_vaksin'];
+    $jumlah_ovk  = $_POST['jumlah_ayam'];
+    $next_ovk = $_POST['next_vaksin'];
+    $biaya_ovk  = $_POST['biaya_vaksin'];
+    $total_biaya = $_POST['totalbiaya'];
 
-    $query = "UPDATE vaksin_detail SET tanggal_vaksin='$tanggal_ovk', jenis_ovk='$jenis_ovk', jumlah_ovk='$jumlah_ovk', next_ovk='$next_vaksin', biaya_ovk='$biaya_ovk' WHERE id='$id'";
+    $query = "UPDATE vaksin_detail SET tanggal_ovk='$tanggal_ovk', jenis_ovk='$jenis_ovk', jumlah_ayam='$jumlah_ovk', next_ovk='$next_ovk', biaya_ovk='$biaya_ovk', total_biaya = '$total_biaya' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-    header('Location: vaksin.php');
+
+    if($result){
+        echo "<script>alert('berhasil update data');</script>";
+        echo "<script>location='vaksin.php';</script>";
+    } else{
+        echo "<script>alert('gagal update data');</script>";
+        
+    }
+
+  
+    // header('Location: vaksin.php');
 }
+
 $id = $_GET['id'];
 $query = "SELECT * FROM vaksin_detail WHERE id='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id = $row['id'];
-    $tanggal_ovk = $row['tanggal_ovk'];
-    $jenis_ovk = $row['jenis_ovk'];
-    $jumlah_ovk = $row['jumlah_ovk'];
-    $next_ovk = $row['next_ovk'];
-    $biaya_ovk   = $row['biaya_ovk'];
+    // $id     = $_POST['id'];
+    // $tanggal_ovk   = $_POST['tanggal_vaksin
+    // '];
+    // $jenis_ovk  = $_POST['jenis_vaksin'];
+    // $jumlah_ovk  = $_POST['jumlah_vaksin'];
+    // $next_ovk = $_POST['next_vaksin'];
+    // $biaya_ovk  = $_POST['biaya_vaksin'];
+    // $total_biaya = $_POST['total_biaya'];
+
 
 ?>
 
@@ -345,23 +360,28 @@ while ($row = mysqli_fetch_array($result)){
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_vaksin" value="<?php echo $tanggal_vaksin; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_vaksin" value="<?php echo $row['tanggal_ovk']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Jenis Vaksin</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_vaksin" value="<?php echo $jenis_vaksin; ?>">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_vaksin" value="<?php echo $row['jenis_ovk'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Jumlah Ayam</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="jumlah_ayam" value="<?php echo $jumlah_ayam; ?>">
+                                    <input type="number" class="form-control form-control-user" id="jmlmasuk" name="jumlah_ayam" value="<?php echo $row['jumlah_ayam'] ?>">
                                 </div>
                                     <div class="form-group">
                                     <label>Next Vaksin</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="next_vaksin" value="<?php echo $next_vaksin; ?>">
+                                    <input type="date" class="form-control form-control-user" id="exampleInputUsername" name="next_vaksin" value="<?php echo $row['next_ovk'] ?>">
                                 </div>
                                     <div class="form-group">
                                     <label>Biaya Vaksin</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" name="biaya_vaksin" value="<?php echo $biaya_vaksin; ?>">
+                                    <input type="number" class="form-control form-control-user" id="hargasatuan" name="biaya_vaksin" value="<?php echo $row['biaya_ovk'] ?>">
+                                </div>
+                                </div>
+                                    <div class="form-group">
+                                    <label>Total Biaya</label>
+                                    <input type="number" class="form-control form-control-user rounded-pill" id="result" name="totalbiaya" value="<?php echo $row['total_biaya'] ?>">
                                 </div>
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
@@ -432,6 +452,9 @@ while ($row = mysqli_fetch_array($result)){
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+       <!-- Hitung ototatis -->
+       <script src="js/calc.js"></script>
 </body>
 
 </html>

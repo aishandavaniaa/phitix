@@ -337,21 +337,13 @@ $sesLvl = $_SESSION['level'];
                                             <th>Pembelian Pakan</th>
                                             <th>Biaya OVK</th>
                                             <th>Tenaga Kerja</th>
+                                            <th>Aksi</th>
                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             
-                                            $query = "SELECT bibit_ayam.bibit_ayam,pakan.pakan,.com_name
-                                            from organization_tbl  
-                                            left outer join company_tbl 
-                                              on company_tbl.org_id=organization_tbl.org_id 
-                                            left outer join location_tbl 
-                                              on  location_tbl.org_id=organization_tbl.org_id
-                                            left outer join emp_type
-                                              on emp_type.org_id=organization_tbl.org_id
-                                             GROUP BY   emp_type.emp_type_name,location_tbl.loc_name,company_tbl.com_name,
-                                            where organization_tbl.org_id=1";
+                                            $query = "SELECT * FROM pengeluaran";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -383,7 +375,7 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-
+                                <a href="insert_pengeluaran.php" class="btn btn-primary">Tambahkan Pengeluaran</a>
                             </div>
                         </div>
                     </div>

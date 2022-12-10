@@ -378,6 +378,8 @@ $sesLvl = $_SESSION['level'];
                                             <td>
                                             <a href="edit_vaksin.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
+                         
+
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -388,7 +390,7 @@ $sesLvl = $_SESSION['level'];
                                   </tbody>
                                 </table>
                                 <td width="160">
-                                <a href="insert_tables.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
+                                <a href="insert_ovk.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
 </td>
 
                             </div>
@@ -432,7 +434,7 @@ $sesLvl = $_SESSION['level'];
                 </div>
                 <div class="modal-body">Pilih "Hapus" dibawah jika anda yakin ingin menghapus data.</div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
+                    <a href="vaksin.php" class="btn btn-danger btn-sm" id="delete_link">Hapus</a>
                     <button type="button" class="btn btn-success btn-sm" datadismiss="modal">Cancel</button>
                 </div>
             </div>
