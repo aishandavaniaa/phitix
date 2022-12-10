@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Tanggal</th>
                                             <th>Kontak</th>
                                             <th>Jumlah Ayam</th>
+                                            <th>Harga Satuan</th>
                                             <th>Payment</th>
                                             <th>Address</th>
                                            
@@ -360,6 +361,7 @@ $sesLvl = $_SESSION['level'];
                                                 $tanggal_distribusi = $row['tanggal_distribusi'];
                                                 $contact = $row['contact'];
                                                 $total_ayam = $row['total_ayam'];
+                                                $harga_satuan = $row['harga_satuan'];
                                                 $payment = $row['payment'];
                                                  $address = $row['address'];
 
@@ -372,6 +374,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $tanggal_distribusi; ?></td>
                                             <td><?php echo $contact; ?></td>
                                             <td><?php echo $total_ayam; ?></td>
+                                            <th><?php echo $harga_satuan; ?></td>
                                             <td><?php echo $payment; ?></td>
                                             <td><?php echo $address; ?></td>
                                             <td>

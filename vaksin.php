@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Jumlah OVK</th>
                                             <th>Next OVK</th>
                                             <th>Biaya OVK</th>
+                                            <th>Total Biaya</th>
                                            
                                         </tr>
                                     </thead>
@@ -359,6 +360,7 @@ $sesLvl = $_SESSION['level'];
                                                 $jumlah_ovk = $row['jumlah_ovk'];
                                                 $next_ovk = $row['next_ovk'];
                                                 $biaya_ovk = $row['biaya_ovk'];
+                                                $total_biaya = $row['total_biaya'];
 
                                         ?>
                                         <tr>
@@ -369,6 +371,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $jumlah_ovk; ?></td>
                                             <td><?php echo $next_ovk; ?></td>
                                             <td><?php echo $biaya_ovk; ?></td>
+                                            <td><?php echo $total_biaya; ?></td>
                                             <td>
                                             <a href="edit_vaksin.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 

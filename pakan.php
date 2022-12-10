@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Tanggal Pembelian</th>
                                             <th>Jenis Pakan</th>
                                             <th>Stok Pakan</th>
+                                            <th>Harga KG</th>
                                             <th>Total Harga</th>
                                            
                                         </tr>
@@ -358,6 +359,7 @@ $sesLvl = $_SESSION['level'];
                                                 $pembelian = $row['pembelian'];
                                                 $jenis_pakan = $row['jenis_pakan'];
                                                 $stok_pakan = $row['stok_pakan'];
+                                                $harga_kg = $row['harga_kg'];
                                                 $total_harga = $row['total_harga'];
 
                                         ?>
@@ -367,6 +369,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $pembelian; ?></td>
                                             <td><?php echo $jenis_pakan; ?></td>
                                             <td><?php echo $stok_pakan; ?></td>
+                                            <td><?php echo $harga_kg; ?></td>
                                             <td><?php echo $total_harga; ?></td>
                                             <td>
                                             <a href="edit_pakan.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
