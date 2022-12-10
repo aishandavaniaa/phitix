@@ -341,6 +341,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Stok Pakan</th>
                                             <th>Harga KG</th>
                                             <th>Total Harga</th>
+                                            <th></th>
                                            
                                         </tr>
                                     </thead>
@@ -382,17 +383,14 @@ $sesLvl = $_SESSION['level'];
                                             }
                                         ?>
                                     </tbody>
-                                </table>
-                                
-                                
-<td>
+                                </table>    
+                                <a href="insert_pakan.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <td width="160">
-                                <a href="insert_pakan.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
    
                 <!-- /.container-fluid -->
 

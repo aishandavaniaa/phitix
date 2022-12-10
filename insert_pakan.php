@@ -14,28 +14,19 @@ $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['insert_data']) ){
     
+    // $id   = $_POST['id'];
+    $tanggal   = $_POST['tanggal_pembelian'];
+    $jenispakan   = $_POST['jenis_pakan'];
+    $stokpakan   = $_POST['stok_pakan'];
+    $harga = $_POST['harga'];
+    $totalharga = $_POST['total_harga'];
     
-    $tanggal   = $_POST['tanggal'];
-    $jenispakan   = $_POST['jenispakan'];
-    $stokpakan   = $_POST['stokpakan'];
-    $totalharga = $_POST['totalharga']
-    
-
-    $query = "INSERT INTO pakan VALUES ('$tanggal', '$jenispakan','$stokpakan','$totalharga')";
+    $query = "INSERT INTO detail_pakan VALUES (null, '$tanggal', '$jenispakan','$stokpakan','$harga','$totalharga')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
+    echo $result;
     header('Location: pakan.php');
 }
-$id = $_GET['id'];
-$query = "SELECT * FROM pakan WHERE id='$id'";
-$result = mysqli_query($koneksi, $query) or die(mysql_error());
-//$nomor = 1;
-while ($row = mysqli_fetch_array($result)){
-    $id = $row['id'];
-    $jenispakan   = $_POST['jenispakan'];
-    $stokpakan   = $_POST['stokpakan'];
-    $totalharga = $_POST['totalharga']  
-   
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +40,7 @@ while ($row = mysqli_fetch_array($result)){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Edit</title>
+    <title>Insert Pakan</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -336,29 +327,39 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Pakan</h1>
                             </div>
-                            <form class="user" action="edit_pendapatan.php" method="POST">
+                            <form class="user" method="POST">
+                                <!-- <div class="form-group">
+                                <label>ID</label>
+                                    <input type="number" class="form-control form-control-user" name="id">
+                                </div> -->
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
+                                <label>Tanggal Pembelian</label>
+                                    <input type="date" class="form-control form-control-user" name="tanggal_pembelian">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pemasukan</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="pemasukan" value="<?php echo $pemasukan; ?>">
+                                <label>Jenis Pakan</label>
+                                    <input type="text" class="form-control form-control-user" name="jenis_pakan">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pengeluaran</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
+                                <label>Stok Pakan</label>
+                                    <input type="number" class="form-control form-control-user input" id="jmlmasuk" name="stok_pakan">
+                                </div>  
+                                <div class="form-group">
+                                <label>Harga (kg)</label>
+                                    <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga">
                                 </div>
-                               
-                               
-                                                        <hr>
+                                <div class="form-group">
+                                <label>Total Harga</label>
+                                    <input type="number" class="form-control form-control-user" id="result" name="total_harga">
+                                </div>                                                        <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
-                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
+                                        <button type="submit" name="insert_data" class="btn btn-primary btn-user btn-block">Insert</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="pendapatan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="pakan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
@@ -421,7 +422,11 @@ while ($row = mysqli_fetch_array($result)){
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Hitung ototatis -->
+    <script src="js/calc.js"></script>
+
 </body>
 
 </html>
-<?php } ?>
+<?php  ?>
