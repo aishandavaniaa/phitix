@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-warning">
 
     <div class="container">
 
