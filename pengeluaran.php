@@ -375,6 +375,11 @@ $sesLvl = $_SESSION['level'];
                                         <?php
                                             $no++;
                                             }
+
+                                            
+?>
+</body>
+</html>
                                         ?>
                                     </tbody>
                                 </table>

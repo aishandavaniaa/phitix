@@ -339,10 +339,9 @@ $sesLvl = $_SESSION['level'];
                                             <th>Nama Karyawan</th>
                                             <th>Jabatan</th>
                                             <th>Gaji</th>
-                                            <th>Total Gaji</th>
                                             <th>Aksi</th>
-                                            
                                         </tr>
+                                        
                                     </thead>
                                     <tbody>
                                     <?php
@@ -360,7 +359,7 @@ $sesLvl = $_SESSION['level'];
                                                 $nama_karyawan = $row['nama_karyawan'];
                                                 $jabatan = $row['jabatan'];
                                                 $gaji = $row['gaji'];
-                                                $tota_gaji = $row['gaji'];
+                                                $total_gaji = $row['gaji'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
@@ -368,21 +367,42 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $nama_karyawan; ?></td>
                                             <td><?php echo $jabatan; ?></td>
                                             <td><?php echo $gaji; ?></td>
-                                            <td><?php echo $gaji; ?></td>
+                                            
                                             
                                            
                                             <td>
+                                                
                                             <a href="edit_tk.php?id= <?php echo $row['id_karyawan']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
                                             <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id_karyawan']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>
+                                        
                                         <?php
                                             $no++;
                                             }
+
+                                            $query = "SELECT  SUM(gaji) from tenaga_kerja";
+                                            $result = mysqli_query($koneksi, $query); 
+                                            //display data on web page
+                                            while($row = mysqli_fetch_array($result)){
+                                                $total_gaji = $row['SUM(gaji)'];
+                                        
+                                            }
+                                            
+                                           //close the connection
+                                        
                                         ?>
+                                       
                                    </tbody>
+                                   <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><b><i>TOTAL GAJI:</b></i> </td>
+                                            <td><b><i><?php echo $total_gaji; ?></i></b></td>
+                                        </tr>
                                 </table>
                                 <td width="160">
                                
