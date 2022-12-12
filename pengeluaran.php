@@ -344,13 +344,7 @@ $sesLvl = $_SESSION['level'];
                                     <tbody>
                                         <?php
                                             
-                                            $query = "SELECT 
-                                                data_ayam.bibit_ayam
-                                                detail_pakan.total_harga
-                                                vaksin_detail.total_biaya
-                                            
-                                            
-                                            * FROM pengeluaran";
+                                            $query = "SELECT * FROM pengeluaran";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
