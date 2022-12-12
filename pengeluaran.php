@@ -337,13 +337,20 @@ $sesLvl = $_SESSION['level'];
                                             <th>Pembelian Pakan</th>
                                             <th>Biaya OVK</th>
                                             <th>Tenaga Kerja</th>
+                                            <th>Total Pengeluaran</th>
                                             <th>Aksi</th>
                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             
-                                            $query = "SELECT * FROM pengeluaran";
+                                            $query = "SELECT 
+                                                data_ayam.bibit_ayam
+                                                detail_pakan.total_harga
+                                                vaksin_detail.total_biaya
+                                            
+                                            
+                                            * FROM pengeluaran";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -356,6 +363,7 @@ $sesLvl = $_SESSION['level'];
                                                 $harga_pakan = $row['harga_pakan'];
                                                 $biaya_vaksin = $row['biaya_vaksin'];
                                                 $tenaga_kerja = $row['tenaga_kerja'];
+                                                $total = $bibit_ayam + $harga_pakan + $biaya_vaksin + $tenaga_kerja;
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
@@ -363,6 +371,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $harga_pakan; ?></td>
                                             <td><?php echo $biaya_vaksin; ?></td>
                                             <td><?php echo $tenaga_kerja; ?></td>
+                                            <td><?php echo $total; ?></td>
                                             <td>
                                             <a href="edit_pengeluaran.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
@@ -375,7 +384,7 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                     </tbody>
                                 </table>
-                                <a href="insert_pengeluaran.php" class="btn btn-primary">Tambahkan Pengeluaran</a>
+                                <a href="insert_pengeluaran.php" class="btn btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>

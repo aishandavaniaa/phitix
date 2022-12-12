@@ -339,6 +339,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Nama Karyawan</th>
                                             <th>Jabatan</th>
                                             <th>Gaji</th>
+                                            <th>Total Gaji</th>
                                             <th>Aksi</th>
                                             
                                         </tr>
@@ -359,6 +360,7 @@ $sesLvl = $_SESSION['level'];
                                                 $nama_karyawan = $row['nama_karyawan'];
                                                 $jabatan = $row['jabatan'];
                                                 $gaji = $row['gaji'];
+                                                $total_gaji = $row['gaji'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
@@ -366,6 +368,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $nama_karyawan; ?></td>
                                             <td><?php echo $jabatan; ?></td>
                                             <td><?php echo $gaji; ?></td>
+                                            <td><?php echo $total_gaji; ?></td>
                                             
                                            
                                             <td>

@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 
 </head>
 
-<body class="bg-gradient-warning">
+<body class="bg-gradient-danger">
 
     <div class="container">
 
@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
                                                 <label class="custom-control-label" for="show_password">Show Password</label>
                                             </div>
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <button type="submit" name="submit" class="btn btn-danger btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
