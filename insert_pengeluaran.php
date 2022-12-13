@@ -15,11 +15,13 @@ $sesLvl = $_SESSION['level'];
 if( isset($_POST['insert_data']) ){
     
     // $id   = $_POST['id'];
-    $tanggal   = $_POST['tanggal_pembelian'];
-    $jenispakan   = $_POST['jenis_pakan'];
-    $stokpakan   = $_POST['stok_pakan'];
-    $harga = $_POST['harga'];
-    $totalharga = $_POST['total_harga'];
+    $id   = $_POST['id'];
+    $harga_pakan   = $_POST['harga_pakan'];
+    $tglbelipakan   = $_POST['tgl_beli_pakan'];
+    $biayavaksin = $_POST['biaya_vaksin'];
+    $tglvaksin = $_POST['tgl_vaksin'];
+    $tenagakerja = $_POST['tenaga_kerja'];
+    $bibitayam = $_POST['bibit_ayam'];
     
     $query = "INSERT INTO detail_pakan VALUES (null, '$tanggal', '$jenispakan','$stokpakan','$harga','$totalharga')";
     echo $query;
