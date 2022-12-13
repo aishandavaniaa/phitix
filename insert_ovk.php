@@ -366,10 +366,7 @@ if( isset($_POST['insert_data']) ){
                                 <label>Biaya OVK</label>
                                     <input type="number" class="form-control form-control-user input" id="hargasatuan" name="biaya_ovk">
                                 </div>  
-                                <div class="form-group">
-                                <label>Total Biaya</label>
-                                    <input type="number" class="form-control form-control-user" id="result" name="total_biaya">
-                                </div>
+                             
                                                                                      <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">

@@ -380,7 +380,7 @@ $sesLvl = $_SESSION['level'];
 ?>
 </body>
 </html>
-                                        ?>
+                                        
                                     </tbody>
                                 </table>
                                 <a href="insert_pengeluaran.php" class="btn btn-primary">Tambah Data</a>

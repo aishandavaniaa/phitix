@@ -361,7 +361,7 @@ $sesLvl = $_SESSION['level'];
                                                 $jenis_pakan = $row['jenis_pakan'];
                                                 $stok_pakan = $row['stok_pakan'];
                                                 $harga_kg = $row['harga_kg'];
-                                                $total_harga = $row['total_harga'];
+                                                $total_harga = $stok_pakan*$harga_kg;
 
                                         ?>
                                         <tr>

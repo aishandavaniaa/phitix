@@ -17,7 +17,7 @@ if( isset($_POST['update']) ){
     $tanggal_masuk   = $_POST['tanggal_masuk'];
     $jumlah_masuk   = $_POST['jumlah_masuk'];
     $harga_satuan = $_POST['harga_satuan'];
-    $total_harga = $_POST['total_harga'];
+   
     $mati   = $_POST['mati'];
 
     $query = "UPDATE data_ayam SET tanggal_masuk='$tanggal_masuk', jumlah_masuk='$jumlah_masuk', harga_satuan='$harga_satuan', total_harga='$total_harga', mati='$mati' WHERE id='$id'";
@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($result)){
     $tanggal_masuk = $row['tanggal_masuk'];
     $jumlah_masuk = $row['jumlah_masuk'];
     $harga_satuan = $row['harga_satuan'];
-    $total_harga = $row['total_harga'];
+   
     $mati = $row['mati'];
 
 ?>
@@ -355,10 +355,7 @@ while ($row = mysqli_fetch_array($result)){
                                     <label>Harga Satuan</label>
                                     <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="harga_satuan" value="<?php echo $harga_satuan; ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label>Total Harga</label>
-                                    <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="total_harga" value="<?php echo $total_harga; ?>">
-                                </div>
+                              
                                 <div class="form-group">
                                     <label>Mati</label>
                                     <input type="number" class="form-control form-control-user" id="exampleInputUsername" name="mati" value="<?php echo $mati; ?>">

@@ -35,7 +35,7 @@ if( isset($_POST['register']) ){
 
 </head>
 
-<body class="bg-gradient-warning">
+<body class="bg-gradient-dark">
 
     <div class="container">
 
