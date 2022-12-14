@@ -23,11 +23,11 @@ if( isset($_POST['insert_data']) ){
     $tenagakerja = $_POST['tenaga_kerja'];
     $bibitayam = $_POST['bibit_ayam'];
     
-    $query = "INSERT INTO detail_pakan VALUES (null, '$tanggal', '$jenispakan','$stokpakan','$harga','$totalharga')";
+    $query = "INSERT INTO pengeluaran VALUES (null, '$id', '$harga_pakan','$tglbelipakan','$biayavaksin','$tglvaksin','$tenagakerja','$bibitayam')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     echo $result;
-    header('Location: pakan.php');
+    header('Location: pengeluaran.php');
 }
 ?>
 
@@ -42,7 +42,7 @@ if( isset($_POST['insert_data']) ){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Insert Pakan</title>
+    <title>Insert Pengeluaran</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
