@@ -23,7 +23,7 @@ if( isset($_POST['insert_data']) ){
     $tenagakerja = $_POST['tenaga_kerja'];
     $bibitayam = $_POST['bibit_ayam'];
     
-    $query = "INSERT INTO pengeluaran VALUES (null, '$id', '$harga_pakan','$tglbelipakan','$biayavaksin','$tglvaksin','$tenagakerja','$bibitayam')";
+    $query = "INSERT INTO pengeluaran VALUES ( '$id', '$harga_pakan','$tglbelipakan','$biayavaksin','$tglvaksin','$tenagakerja','$bibitayam')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     echo $result;
@@ -342,11 +342,11 @@ if( isset($_POST['insert_data']) ){
                                 </div>  
                                 <div class="form-group">
                                 <label>Harga Pakan</label>
-                                    <input type="date" class="form-control form-control-user" name="harga_pakan">
+                                    <input type="number" class="form-control form-control-user" name="harga_pakan">
                                 </div>
                                 <div class="form-group">
                                 <label>Tgl Beli Pakan</label>
-                                    <input type="text" class="form-control form-control-user" name="tgl_beli_pakan">
+                                    <input type="date" class="form-control form-control-user" name="tgl_beli_pakan">
                                 </div>
                                 <div class="form-group">
                                 <label>Biaya Vaksin</label>
@@ -354,7 +354,7 @@ if( isset($_POST['insert_data']) ){
                                 </div>  
                                 <div class="form-group">
                                 <label>Tgl Vaksin</label>
-                                    <input type="number" class="form-control form-control-user" name="tgl_vaksin">
+                                    <input type="date" class="form-control form-control-user" name="tgl_vaksin">
                                 </div>
                                 <div class="form-group">
                                 <label>Tenaga kerja</label>

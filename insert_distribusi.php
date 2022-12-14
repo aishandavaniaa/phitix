@@ -12,24 +12,25 @@ $sesID = $_SESSION['id'];
 $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
-
-if(isset($_POST['insert_data'])) {
-
-    $id = $_POST['id'];
-    $customer   = $_POST['customer'];
-    $tanggal_distribusi   = $_POST['tanggal_distribusi'];
-    $contact   = $_POST['contact'];
-    $total_ayam = $_POST['total_ayam'];
-    $harga_satuan = $_POST['harga_satuan'];
+if( isset($_POST['insert_data']) ){
+    
+    // $id   = $_POST['id'];
+    $id   = $_POST['id'];
+    $customer  = $_POST['customer'];
+    $tgldistribusi   = $_POST['tgl_distribusi'];
+    $contact = $_POST['contact'];
+    $totalayam = $_POST['total_ayam'];
+    $hargasatuan = $_POST['harga_satuan'];
     $payment = $_POST['payment'];
     $address = $_POST['address'];
-
-    $query = "INSERT INTO distribusi (null, id, customer, tanggal_distribusi, contact, total_ayam, harga_satuan, payment, address) VALUES ('$id', '$customer', '$tanggal_distribusi', '$contact', '$total_ayam', '$harga_satuan', '$payment', '$address')";
+    
+    $query = "INSERT INTO distribusi VALUES ( '$id', '$customer','$tgldistribusi','$contact', '$totalayam', '$hargasatuan', '$payment', '$address')";
+    echo $query;
     $result = mysqli_query($koneksi, $query);
+    echo $result;
     header('Location: distribusi.php');
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +68,7 @@ if(isset($_POST['insert_data'])) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PHITIX</div>
+                <div class="sidebar-brand-text mx-3">PHITIX<sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -98,10 +99,10 @@ if(isset($_POST['insert_data'])) {
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Data</h6>
-                        <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                     <a class="collapse-item" href="tables.php">User</a>
+                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
-                        <a class="collapse-item" href="vaksin.php">Data OVK</a>
-                        <a class="collapse-item" href="data_tk.php">Data Tenaga Kerja</a>
+                        <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
                         <a class="collapse-item" href="distribusi.php">Distribusi</a>
                         <a class="collapse-item" href="pengeluaran.php">Pengeluaran</a>
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
@@ -322,52 +323,59 @@ if(isset($_POST['insert_data'])) {
                 </nav>
                 <!-- End of Topbar -->
     <div class="container">
-  
         <div class="card o-hidden border-0 shadow-lg justify-content-center align-items-center">
             <div class="card-body w-75 vh-50 ">
                 <!-- Nested Row within Card Body -->
 
-                        
+
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Insert Data Distribusi</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Distribusi</h1>
                             </div>
-                            <form method="post" action="?">
-                            
+                            <form class="user" method="POST">
+                                <!-- <div class="form-group">
+                                <label>ID</label>
+                                    <input type="number" class="form-control form-control-user" name="id">
+                                </div> -->
                                 <div class="form-group">
                                 <label>ID</label>
                                     <input type="number" class="form-control form-control-user" name="id">
+                                </div>  
+                                <div class="form-group">
+                                <label>Nama Pelanggan</label>
+                                    <input type="text" class="form-control form-control-user" name="customer">
                                 </div>
                                 <div class="form-group">
-                                    <label>Pelanggan</label>
-                                    <input type="date" class="form-control form-control-user" name="customer">
+                                <label>Tgl Distribusi</label>
+                                    <input type="date" class="form-control form-control-user" name="tgl_distribusi">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tanggal Distribusi</label>
-                                    <input type="date" class="form-control form-control-user" name="tanggal_distrbusi">
-                                </div>
-                                <div class="form-group">
-                                    <label>No Telp</label>
+                                <label>Nomor Telepon</label>
                                     <input type="number" class="form-control form-control-user" name="contact">
-                                </div>
+                                </div>  
                                 <div class="form-group">
-                                    <label>Toatal Ayam</label>
+                                <label>Total Ayam</label>
                                     <input type="number" class="form-control form-control-user" name="total_ayam">
                                 </div>
                                 <div class="form-group">
-                                    <label>Harga Satuan</label>
-                                    <input type="date" class="form-control form-control-user" name="harga_satuan">
-                                </div>
+                                <label>Harga Satuan</label>
+                                    <input type="number" class="form-control form-control-user" name="harga_satuan">
+                                </div>    
                                 <div class="form-group">
-                                    <label>Payment</label>
-                                    <input type="date" class="form-control form-control-user" name="payment">
-                                </div>
+                                <label>Payment</label>
+                                    <input type="number" class="form-control form-control-user" name="payment">
+                                </div>  
+                                <div class="form-group">
+                                <label>Alamat</label>
+                                    <input type="text" class="form-control form-control-user" name="adress">
+                                </div>                                                    
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
-                                    <div class="px-3" style="width: 150px round;">
-                                        <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
-                                
-                                    	<button type="reset" name="delete_data" class="btn btn-danger">Clear</button>
+                                    <div class="px-3" style="width: 150px;">
+                                        <button type="submit" name="insert_data" class="btn btn-primary btn-user btn-block">Insert</button>
+                                    </div>
+                                    <div style="width: 125px;">
+                                        <a href="pakan.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
@@ -430,6 +438,10 @@ if(isset($_POST['insert_data'])) {
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Hitung ototatis -->
+    <script src="js/calc.js"></script>
+
 </body>
 
 </html>
