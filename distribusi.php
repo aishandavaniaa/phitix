@@ -93,7 +93,6 @@ $sesLvl = $_SESSION['level'];
                 </div>
             </li>
 
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -321,20 +320,19 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Pengeluaran</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Distribusi</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Pengeluaran</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Id</th>
+                                            <th>ID</th>
                                             <th>Nama Customer</th>
                                             <th>Tanggal</th>
                                             <th>Kontak</th>
@@ -342,11 +340,11 @@ $sesLvl = $_SESSION['level'];
                                             <th>Harga Satuan</th>
                                             <th>Payment</th>
                                             <th>Address</th>
-                                           
-                                        </tr>
+                                       </tr>
                                     </thead>
                                     <tbody>
                                         <?php
+                                            
                                             $query = "SELECT * FROM distribusi";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
@@ -356,6 +354,7 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
+
                                                 $id = $row['id'];
                                                 $customer = $row['customer'];
                                                 $tanggal_distribusi = $row['tanggal_distribusi'];
@@ -363,12 +362,10 @@ $sesLvl = $_SESSION['level'];
                                                 $total_ayam = $row['total_ayam'];
                                                 $harga_satuan = $row['harga_satuan'];
                                                 $payment = $row['payment'];
-                                                 $address = $row['address'];
-
-
+                                                $address = $row['address'];
+                                               
                                         ?>
                                         <tr>
-                                            <td><?php echo $no; ?></td>
                                             <td><?php echo $id; ?></td>
                                             <td><?php echo $customer; ?></td>
                                             <td><?php echo $tanggal_distribusi; ?></td>
@@ -386,10 +383,15 @@ $sesLvl = $_SESSION['level'];
                                         <?php
                                             $no++;
                                             }
-                                        ?>
+
+                                            
+?>
+</body>
+</html>
+                                        
                                     </tbody>
                                 </table>
-
+                                <a href="insert_distribusi.php" class="btn btn-primary">Tambah Data</a>
                             </div>
                         </div>
                     </div>
