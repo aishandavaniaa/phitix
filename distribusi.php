@@ -320,12 +320,12 @@ $sesLvl = $_SESSION['level'];
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Pengeluaran</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Distribusi</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Pengeluaran</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Distribusi</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -384,11 +384,31 @@ $sesLvl = $_SESSION['level'];
                                             $no++;
                                             }
 
-                                            
-?>
-</body>
-</html>
+                                            $query = "SELECT  SUM(total_ayam) from distribusi";
+                                            $result = mysqli_query($koneksi, $query); 
+                                            //display data on web page
+                                            while($row = mysqli_fetch_array($result)){
+                                                $laku_ayam = $row['SUM(total_ayam)'];
                                         
+                                            }
+                                            
+                                           //close the connection
+                                        
+                                        ?>
+                                       
+                                   </tbody>
+                                   <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><b><i>JUMLAH AYAM:</b></i> </td>
+                                            <td><b><i><?php echo $laku_ayam; ?></i></b></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                </table>
                                     </tbody>
                                 </table>
                                 <a href="insert_distribusi.php" class="btn btn-primary">Tambah Data</a>

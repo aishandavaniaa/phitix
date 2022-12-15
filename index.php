@@ -329,14 +329,28 @@ $sesLvl = $_SESSION['level'];
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
+                        <?php
+                        $query = "SELECT * FROM data_ayam";
+                        $result = mysqli_query($koneksi, $query); 
+                        $no = 1;      
+                        if ($sesLvl == 1) {
+                        $dis = "";    
+                        }else{
+                        $dis = "disabled";
+                        }
+                        while ($row = mysqli_fetch_array($result)) {
+
+                        $jumlah_masuk = $row['jumlah_masuk'];
+                        }
+                        ?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Jumlah Ayam (ekor)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1000</div>
+                                                Jumlah Ayam (ekor) | DESEMBER</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_masuk; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -347,14 +361,27 @@ $sesLvl = $_SESSION['level'];
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
+                        <?php
+                        $query = "SELECT * FROM distribusi";
+                        $result = mysqli_query($koneksi, $query); 
+                    
+
+                    $query = "SELECT  SUM(total_ayam) from distribusi";
+                    $result = mysqli_query($koneksi, $query); 
+                    //display data on web page
+                    while($row = mysqli_fetch_array($result)){
+                        $laku_ayam = $row['SUM(total_ayam)'];
+                
+                    }
+                        ?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Penjualan Ayam (ekor)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">150</div>
+                                                Penjualan Ayam (ekor) | DESEMBER</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $laku_ayam; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -365,16 +392,28 @@ $sesLvl = $_SESSION['level'];
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
+                        <?php
+                        $query = "SELECT * FROM distribusi";
+                        $result = mysqli_query($koneksi, $query); 
+                    
+
+                    $query = "SELECT  SUM(stok_pakan) from detail_pakan";
+                    $result = mysqli_query($koneksi, $query); 
+                    //display data on web page
+                    while($row = mysqli_fetch_array($result)){
+                        $pakan = $row['SUM(stok_pakan)'];
+                
+                    }?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Stok Pakan (kg)
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Stok Pakan (kg) | DESEMBER
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">65</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $pakan; ?></div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -393,15 +432,31 @@ $sesLvl = $_SESSION['level'];
                             </div>
                         </div>
 
-                        <!-- Pending Requests Card Example -->
+                        <?php
+                                            $query = "SELECT * FROM pendapatan";
+                                            $result = mysqli_query($koneksi, $query); 
+                                            $no = 1;      
+                                            if ($sesLvl == 1) {
+                                                $dis = "";    
+                                        
+                                            }
+                        while ($row = mysqli_fetch_array($result)) {
+                            $id = $row['id'];
+                            $tanggal = $row['tanggal'];
+                            $pemasukan = $row['pemasukan'];
+                            $pengeluaran = $row['pengeluaran'];
+                            $total = $pemasukan - $pengeluaran;
+                        }
+                                                
+                                        ?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pendapatan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1.500.000</div>
+                                                Pendapatan | DESEMBER </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>

@@ -402,6 +402,7 @@ $sesLvl = $_SESSION['level'];
                                             <td></td>
                                             <td><b><i>TOTAL GAJI:</b></i> </td>
                                             <td><b><i><?php echo $total_gaji; ?></i></b></td>
+                                            <td></td>
                                         </tr>
                                 </table>
                                 <td width="160">

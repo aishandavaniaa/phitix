@@ -381,7 +381,29 @@ $sesLvl = $_SESSION['level'];
                                         <?php
                                             $no++;
                                             }
+
+                                            $query = "SELECT  SUM(stok_pakan) from detail_pakan";
+                                            $result = mysqli_query($koneksi, $query); 
+                                            //display data on web page
+                                            while($row = mysqli_fetch_array($result)){
+                                                $stok_pakan = $row['SUM(stok_pakan)'];
+                                        
+                                            }
+                                            
+                                           //close the connection
+                                        
                                         ?>
+                                       
+                                   </tbody>
+                                   <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><b><i>STOK PAKAN:</b></i> </td>
+                                            <td><b><i><?php echo $stok_pakan; ?></i></b></td>
+                                            <td></td>
+                                        </tr>
+                                       
                                     </tbody>
                                 </table>    
                                 <a href="insert_pakan.php" name="insert_data" class="btn btn-primary">Tambah Data</a> 
