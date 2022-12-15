@@ -360,7 +360,7 @@ $sesLvl = $_SESSION['level'];
                                                 $tanggal_masuk = $row['tanggal_masuk'];
                                                 $jumlah_masuk = $row['jumlah_masuk'];
                                                 $harga_satuan = $row['harga_satuan'];
-                                                $total_harga = $row['total_harga'];
+                                                $total_harga = $jumlah_masuk*$harga_satuan;
                                                 $mati = $row['mati'];
                                         ?>
                                         <tr>

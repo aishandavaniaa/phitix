@@ -332,13 +332,13 @@ $sesLvl = $_SESSION['level'];
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Bibit Ayam</th>
-                                            <th>Pembelian Pakan</th>
-                                            <th>Biaya OVK</th>
+                                            <th>ID</th>
+                                            <th>Harga Pakan</th>
+                                            <th>Tgl Beli Pakan</th>
+                                            <th>Biaya Vaksin</th>
+                                            <th>Tgl Vaksin</th>
                                             <th>Tenaga Kerja</th>
-                                            <th>Total Pengeluaran</th>
-                                            <th>Aksi</th>
+                                            <th>Bibit Ayam</th>
                                        </tr>
                                     </thead>
                                     <tbody>
@@ -353,19 +353,23 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $bibit_ayam = $row['bibit_ayam'];
+                                                $id = $row['id'];
                                                 $harga_pakan = $row['harga_pakan'];
-                                                $biaya_vaksin = $row['biaya_vaksin'];
-                                                $tenaga_kerja = $row['tenaga_kerja'];
-                                                $total = $bibit_ayam + $harga_pakan + $biaya_vaksin + $tenaga_kerja;
+                                                $tglbelipakan = $row['tgl_beli_pakan'];
+                                                $biayavaksin = $row['biaya_vaksin'];
+                                                $tglvaksin = $row['tgl_vaksin'];
+                                                $tenagakerja = $row['tenaga_kerja'];
+                                                $bibitayam = $row['bibit_ayam'];
+                                               
                                         ?>
                                         <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $bibit_ayam; ?></td>
+                                            <td><?php echo $id; ?></td>
                                             <td><?php echo $harga_pakan; ?></td>
-                                            <td><?php echo $biaya_vaksin; ?></td>
-                                            <td><?php echo $tenaga_kerja; ?></td>
-                                            <td><?php echo $total; ?></td>
+                                            <td><?php echo $tglbelipakan; ?></td>
+                                            <td><?php echo $biayavaksin; ?></td>
+                                            <td><?php echo $tglvaksin; ?></td>
+                                            <td><?php echo $tenagakerja; ?></td>
+                                            <td><?php echo $bibitayam; ?></td>
                                             <td>
                                             <a href="edit_pengeluaran.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
@@ -380,7 +384,7 @@ $sesLvl = $_SESSION['level'];
 ?>
 </body>
 </html>
-                                        ?>
+                                        
                                     </tbody>
                                 </table>
                                 <a href="insert_pengeluaran.php" class="btn btn-primary">Tambah Data</a>

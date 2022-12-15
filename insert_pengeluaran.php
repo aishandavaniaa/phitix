@@ -15,17 +15,19 @@ $sesLvl = $_SESSION['level'];
 if( isset($_POST['insert_data']) ){
     
     // $id   = $_POST['id'];
-    $tanggal   = $_POST['tanggal_pembelian'];
-    $jenispakan   = $_POST['jenis_pakan'];
-    $stokpakan   = $_POST['stok_pakan'];
-    $harga = $_POST['harga'];
-    $totalharga = $_POST['total_harga'];
+    $id   = $_POST['id'];
+    $harga_pakan   = $_POST['harga_pakan'];
+    $tglbelipakan   = $_POST['tgl_beli_pakan'];
+    $biayavaksin = $_POST['biaya_vaksin'];
+    $tglvaksin = $_POST['tgl_vaksin'];
+    $tenagakerja = $_POST['tenaga_kerja'];
+    $bibitayam = $_POST['bibit_ayam'];
     
-    $query = "INSERT INTO detail_pakan VALUES (null, '$tanggal', '$jenispakan','$stokpakan','$harga','$totalharga')";
+    $query = "INSERT INTO pengeluaran VALUES ( '$id', '$harga_pakan','$tglbelipakan','$biayavaksin','$tglvaksin','$tenagakerja','$bibitayam')";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     echo $result;
-    header('Location: pakan.php');
+    header('Location: pengeluaran.php');
 }
 ?>
 
@@ -40,7 +42,7 @@ if( isset($_POST['insert_data']) ){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Insert Pakan</title>
+    <title>Insert Pengeluaran</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -327,7 +329,7 @@ if( isset($_POST['insert_data']) ){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Insert Pakan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Insert Pengeluaran</h1>
                             </div>
                             <form class="user" method="POST">
                                 <!-- <div class="form-group">
@@ -335,25 +337,33 @@ if( isset($_POST['insert_data']) ){
                                     <input type="number" class="form-control form-control-user" name="id">
                                 </div> -->
                                 <div class="form-group">
-                                <label>Tanggal Pembelian</label>
-                                    <input type="date" class="form-control form-control-user" name="tanggal_pembelian">
-                                </div>
-                                <div class="form-group">
-                                <label>Jenis Pakan</label>
-                                    <input type="text" class="form-control form-control-user" name="jenis_pakan">
-                                </div>
-                                <div class="form-group">
-                                <label>Stok Pakan</label>
-                                    <input type="number" class="form-control form-control-user input" id="jmlmasuk" name="stok_pakan">
+                                <label>ID</label>
+                                    <input type="number" class="form-control form-control-user" name="id">
                                 </div>  
                                 <div class="form-group">
-                                <label>Harga (kg)</label>
-                                    <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga">
+                                <label>Harga Pakan</label>
+                                    <input type="number" class="form-control form-control-user" name="harga_pakan">
                                 </div>
                                 <div class="form-group">
-                                <label>Total Harga</label>
-                                    <input type="number" class="form-control form-control-user" id="result" name="total_harga">
-                                </div>                                                        <hr>
+                                <label>Tgl Beli Pakan</label>
+                                    <input type="date" class="form-control form-control-user" name="tgl_beli_pakan">
+                                </div>
+                                <div class="form-group">
+                                <label>Biaya Vaksin</label>
+                                    <input type="number" class="form-control form-control-user" name="biaya_vaksin">
+                                </div>  
+                                <div class="form-group">
+                                <label>Tgl Vaksin</label>
+                                    <input type="date" class="form-control form-control-user" name="tgl_vaksin">
+                                </div>
+                                <div class="form-group">
+                                <label>Tenaga kerja</label>
+                                    <input type="number" class="form-control form-control-user" name="tenaga_kerja">
+                                </div>    
+                                <div class="form-group">
+                                <label>Bibit Ayam</label>
+                                    <input type="number" class="form-control form-control-user" name="bibit_ayam">
+                                </div>                                                      <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
                                         <button type="submit" name="insert_data" class="btn btn-primary btn-user btn-block">Insert</button>

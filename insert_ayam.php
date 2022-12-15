@@ -19,7 +19,7 @@ if(isset($_POST['insert_data'])) {
     $tanggal_masuk   = $_POST['tanggal_masuk'];
     $jumlah_masuk   = $_POST['jumlah_masuk'];
     $harga_satuan = $_POST['harga_satuan'];
-    $total_harga = $_POST['total_harga'];
+  
     $mati  = $_POST['mati'];
 
     $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, harga_satuan, total_harga, mati) VALUES ('$id', '$tanggal_masuk', '$jumlah_masuk', '$harga_satuan', '$total_harga', '$mati')";
@@ -347,10 +347,7 @@ if(isset($_POST['insert_data'])) {
                                 <label>Harga Satuan</label>
                                     <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga_satuan">
                                 </div>
-                                <div class="form-group">
-                                <label>Total Harga</label>
-                                    <input type="number" class="form-control form-control-user" id="result" name="total_harga">
-                                </div>
+                               
                                 <div class="form-group">
                                     <label>Mati</label>
                                     <input type="number" class="form-control form-control-user" name="mati">

@@ -19,7 +19,7 @@ if( isset($_POST['insert_data']) ){
     $jenispakan   = $_POST['jenis_pakan'];
     $stokpakan   = $_POST['stok_pakan'];
     $harga = $_POST['harga'];
-    $totalharga = $_POST['total_harga'];
+    
     
     $query = "INSERT INTO detail_pakan VALUES (null, '$tanggal', '$jenispakan','$stokpakan','$harga','$totalharga')";
     echo $query;
@@ -350,10 +350,7 @@ if( isset($_POST['insert_data']) ){
                                 <label>Harga (kg)</label>
                                     <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga">
                                 </div>
-                                <div class="form-group">
-                                <label>Total Harga</label>
-                                    <input type="number" class="form-control form-control-user" id="result" name="total_harga">
-                                </div>                                                        <hr>
+                                                                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
                                         <button type="submit" name="insert_data" class="btn btn-primary btn-user btn-block">Insert</button>
