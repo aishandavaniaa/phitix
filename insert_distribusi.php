@@ -21,8 +21,9 @@ if( isset($_POST['insert_data']) ){
     $contact = $_POST['contact'];
     $totalayam = $_POST['total_ayam'];
     $hargasatuan = $_POST['harga_satuan'];
-    $payment = $_POST['payment'];
+    $payment = $hargasatuan * $totalayam;
     $address = $_POST['address'];
+     
     
     $query = "INSERT INTO distribusi VALUES ( '$id', '$customer','$tgldistribusi','$contact', '$totalayam', '$hargasatuan', '$payment', '$address')";
     echo $query;
@@ -362,12 +363,10 @@ if( isset($_POST['insert_data']) ){
                                     <input type="number" class="form-control form-control-user" name="harga_satuan">
                                 </div>    
                                 <div class="form-group">
-                                <label>Payment</label>
-                                    <input type="number" class="form-control form-control-user" name="payment">
-                                </div>  
+                               
                                 <div class="form-group">
                                 <label>Alamat</label>
-                                    <input type="text" class="form-control form-control-user" name="adress">
+                                    <input type="text" class="form-control form-control-user" name="address">
                                 </div>                                                    
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
