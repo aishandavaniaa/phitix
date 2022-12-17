@@ -101,7 +101,15 @@ if (isset($_POST['submit'])) {
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <form class="user" action="login.php" method="post">
-                                        <div class="form-group">
+                                        <div>
+                                    <label>Login as:</label>
+                                    <div class="form-group">
+                                           
+                                            <select class="form-group" aria-describedby="Default select example" rounded>
+                                            <option selected value="admin">Admin</option>
+                                            <option value="owner">Owner</option>
+                                    </div>
+                                             <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address..." name="txt_email">
