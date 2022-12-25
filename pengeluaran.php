@@ -323,6 +323,7 @@ $sesLvl = $_SESSION['level'];
                     <h1 class="h3 mb-2 text-gray-800">Data Pengeluaran</h1>
 
                     <!-- DataTales Example -->
+<!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Table Pengeluaran</h6>
@@ -335,7 +336,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>ID</th>
                                             <th>Harga Pakan</th>
                                             <th>Tgl Beli Pakan</th>
-                                            <th>Biaya Vaksin</th>
+                                             <th>Biaya Vaksin</th>
                                             <th>Tgl Vaksin</th>
                                             <th>Tenaga Kerja</th>
                                             <th>Bibit Ayam</th>
@@ -370,6 +371,7 @@ $sesLvl = $_SESSION['level'];
                                             <td><?php echo $tglvaksin; ?></td>
                                             <td><?php echo $tenagakerja; ?></td>
                                             <td><?php echo $bibitayam; ?></td>
+                                            
                                             <td>
                                             <a href="edit_pengeluaran.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
@@ -379,15 +381,15 @@ $sesLvl = $_SESSION['level'];
                                         <?php
                                             $no++;
                                             }
-
-                                            
-?>
-</body>
-</html>
+                                    ?>
                                         
                                     </tbody>
                                 </table>
-                                <a href="insert_pengeluaran.php" class="btn btn-primary">Tambah Data</a>
+                                <td width="160">
+                               
+                                <a href="insert_pengeluaran.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
+                                        </td>
+                      </td> 
                             </div>
                         </div>
                     </div>
