@@ -30,8 +30,6 @@ $sesLvl = $_SESSION['level'];
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <script src="//code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <!-- Custom styles for this template-->
     <link href="sb-admin-2.min.css" rel="stylesheet">
@@ -323,19 +321,8 @@ $sesLvl = $_SESSION['level'];
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            class="fas fa-download fa-sm text-white-50" onclick="window.print()"><i>Generate Report</i></a>
-                                    <script>
-                                    document.getElementById("print-button").onclick = function() {
-                                        window.print(document.getElementById("print-area"));
-                                    };
-                                    </script>
-        
-
-
-
-
-
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <!-- Content Row -->
@@ -343,29 +330,26 @@ $sesLvl = $_SESSION['level'];
 
                         <!-- Earnings (Monthly) Card Example -->
                         <?php
-                        
-                                        
-                        
+                        $query = "SELECT * FROM data_ayam";
+                        $result = mysqli_query($koneksi, $query); 
+                        $no = 1;      
+                        if ($sesLvl == 1) {
+                        $dis = "";    
+                        }else{
+                        $dis = "disabled";
+                        }
+                        while ($row = mysqli_fetch_array($result)) {
 
-                          $query = "SELECT  SUM(jumlah_masuk) from data_ayam";
-                          $result = mysqli_query($koneksi, $query); 
-                          //display data on web page
-                          while($row = mysqli_fetch_array($result)){
-                              $jumlah_masuk = $row['SUM(jumlah_masuk)'];
-                      
-                          }
-                          
-                         //close the connection
-                      
-                      ?>
-                    
+                        $jumlah_masuk = $row['jumlah_masuk'];
+                        }
+                        ?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Jumlah Ayam (ekor)</div>
+                                                Jumlah Ayam (ekor) | DESEMBER</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_masuk; ?></div>
                                         </div>
                                         <div class="col-auto">
@@ -396,7 +380,7 @@ $sesLvl = $_SESSION['level'];
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Penjualan Ayam (ekor)</div>
+                                                Penjualan Ayam (ekor) | DESEMBER</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $laku_ayam; ?></div>
                                         </div>
                                         <div class="col-auto">
@@ -425,14 +409,18 @@ $sesLvl = $_SESSION['level'];
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Stok Pakan (kg)
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Stok Pakan (kg) | DESEMBER
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $pakan; ?></div>
                                                 </div>
                                                 <div class="col">
-                                                    
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -467,7 +455,7 @@ $sesLvl = $_SESSION['level'];
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pendapatan </div>
+                                                Pendapatan | DESEMBER </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total; ?></div>
                                         </div>
                                         <div class="col-auto">
@@ -485,59 +473,15 @@ $sesLvl = $_SESSION['level'];
 
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-2">
+                            <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-4 d-flex flex-row align-items-center justify-content-between">
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Penjualan Ayam</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            <script>
-	$(document).ready(function () {
-		showGraph();
-	});
-
-	function showGraph()
-
-{
-	{
-		$.post("bar_encode.php",
-			function (data)
-			{
-				console.log(data);
-				var id = [];
-				var jual = [];
-
-			for (var i in data) {
-				id.push(data[i].total_ayam);
-				jual.push(data[i].total_ayam);
-			}
-			var chartdata = {
-				labels: id,
-				datasets: [
-				{
-					label: 'Penjualan Ayam',
-					backgroundColor: '#f6c23e',
-					borderColor: '#46d5f1',
-					hoverBackgroundColor: '#CCCCCC',
-					hoverBorderColor: '#666666',
-					data: jual
-				}
-				]
-			};
-
-			var graphTarget = $("#graphCanvas");
-
-			var barGraph = new Chart(graphTarget, {
-				type: 'bar',
-				data: chartdata
-			});
-			});
-	}
-}
-</script>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
@@ -551,16 +495,105 @@ $sesLvl = $_SESSION['level'];
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                <div id="chart-container">
-                                    <canvas id="graphCanvas"></canvas>
-                                    
-                                </div>
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                     
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">Server Migration <span
+                                            class="float-right">20%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Sales Tracking <span
+                                            class="float-right">40%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Customer Database <span
+                                            class="float-right">60%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar" role="progressbar" style="width: 60%"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Payout Details <span
+                                            class="float-right">80%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Account Setup <span
+                                            class="float-right">Complete!</span></h4>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                   
+                        <div class="col-lg-6 mb-4">
+
+         
                 <!-- /.container-fluid -->
 
             </div>
