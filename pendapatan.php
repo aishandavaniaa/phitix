@@ -381,37 +381,6 @@ $sesLvl = $_SESSION['level'];
                                             $no++;
                                             }
                                         ?>
-                                         <?php
-                                        
-                                        $no++;
-                                        
-
-                                        $query = "SELECT  SUM($total) from pendapatan";
-                                        $result = mysqli_query($koneksi, $query); 
-                                        //display data on web page
-                                        while($row = mysqli_fetch_array($result)){
-                                            $total = $row['SUM($total)'];
-                                    
-                                        }
-                                        
-                                       //close the connection
-                                    
-                                    ?>
-                                   
-                               </tbody>
-                               <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><b><i>TOTAL PENDAPATAN:</b></i> </td>
-                                        <td><b><i><?php echo $total; ?></i></b></td>
-                                        <td></td>
-                                    </tr>
-                                    <?php
-                                         $no++;
-                                         
-                                     ?>
                                    </tbody>
                                 </table>
                                 <td width="160">
