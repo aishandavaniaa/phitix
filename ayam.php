@@ -379,34 +379,8 @@ $sesLvl = $_SESSION['level'];
                                              
                                             </tr>
                                         <?php
-                                        
-                                           $no++;
-                                           }
-
-                                           $query = "SELECT  SUM(jumlah_masuk) from data_ayam";
-                                           $result = mysqli_query($koneksi, $query); 
-                                           //display data on web page
-                                           while($row = mysqli_fetch_array($result)){
-                                               $jumlah_masuk = $row['SUM(jumlah_masuk)'];
-                                       
-                                           }
-                                           
-                                          //close the connection
-                                       
-                                       ?>
-                                      
-                                  </tbody>
-                                  <tr>
-                                           <td></td>
-                                           <td></td>
-                                           
-                                           <td><b><i>JUMLAH AYAM:</b></i> </td>
-                                           <td><b><i><?php echo $jumlah_masuk; ?></i></b></td>
-                                           <td></td>
-                                       </tr>
-                                       <?php
                                             $no++;
-                                            
+                                            }
                                         ?>
                                     </tbody>
                                 </table>

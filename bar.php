@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Penjualan Ayam</title>
+	<title>Contoh Penggunaan BarsGraph</title>
 	<style type="text/css">
 		BODY {
-			width: 100PX;
+			width: 550PX;
 		}
 
 		#chart-container {
@@ -48,7 +48,7 @@
 				labels: id,
 				datasets: [
 				{
-					label: 'Penjualan Ayam',
+					label: 'Nama User',
 					backgroundColor: '#49e2ff',
 					borderColor: '#46d5f1',
 					hoverBackgroundColor: '#CCCCCC',
