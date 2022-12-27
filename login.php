@@ -107,8 +107,21 @@ if (isset($_POST['submit'])) {
                                            
                                             <select class="form-group" aria-describedby="Default select example" rounded>
                                             <option selected value="admin">Admin</option>
-                                            <option value="owner">Owner</option>
+                                            <option selected value="owner">Owner</option>
+                                            
+                                         
                                     </div>
+                                    <?php 
+                                            $query = "SELECT * FROM user_detail";
+                                            $result = mysqli_query($koneksi, $query);
+                                            $no = 1;
+                                            if ($sesLvl == 1) {
+                                                $dis = "";
+                                            }else{
+                                                $dis = "disabled";
+                                            }
+                                            ?>
+                                            
                                              <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
