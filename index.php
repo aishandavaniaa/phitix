@@ -484,11 +484,11 @@ $sesLvl = $_SESSION['level'];
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-9 col-md-6 mb-4">
                             <div class="card shadow mb-2">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-4 d-flex flex-row align-items-center justify-content-between">
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Penjualan Ayam</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"

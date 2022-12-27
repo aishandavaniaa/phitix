@@ -5028,14 +5028,14 @@ input[type=submit].btn-block {
 
 .card>.card-header+.list-group,
 .card>.list-group+.card-footer {
-    border-top: 0;
-    float: right;
+    border-top: 0
 }
 
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem;
+    width: 100%;
     
       
 }
