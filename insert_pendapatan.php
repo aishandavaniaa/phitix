@@ -52,24 +52,26 @@ if(isset($_POST['insert_data'])) {
 </head>
 
 <body class="bg-gradient-primary">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+      <!-- Page Wrapper -->
+      <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">PHITIX</div>
-            </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <div class="sidebar-brand-icon flip-n-180">
+        <img src="img/chicken.png"
+            class="right-arrow"
+            style="transform: scaleX(-1);">
+        </div>
+        <div class="sidebar-brand-text mx-1">PHITIX</div>
+    </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+    <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -328,7 +330,7 @@ if(isset($_POST['insert_data'])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
                             </div>
-                            <form method="post" action="?">
+                            <form class="user" method="POST">
                             
                                 <div class="form-group">
                                 <label>ID</label>
@@ -346,16 +348,18 @@ if(isset($_POST['insert_data'])) {
                                     <label>Pengeluaran</label>
                                     <input type="number" class="form-control form-control-user" name="pengeluaran">
                                 </div>
+                                </form>
                                  <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px round;">
                                         <button type="submit" name="insert_data" class="btn btn-primary">Tambah Data</button>
                                 
                                     	<button type="reset" name="delete_data" class="btn btn-danger">Clear</button>
+                                        
                                     </div>
                                 </div>
-                            </form>
                             
+                        </div>
                         </div>
                     </div>
                 

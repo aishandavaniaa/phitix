@@ -62,10 +62,12 @@ if(isset($_POST['insert_data'])) {
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon flip-n-180">
+                <img src="img/chicken.png"
+                    class="right-arrow"
+                    style="transform: scaleX(-1);">
                 </div>
-                <div class="sidebar-brand-text mx-3">PHITIX</div>
+                <div class="sidebar-brand-text mx-1">PHITIX</div>
             </a>
 
             <!-- Divider -->
@@ -329,7 +331,7 @@ if(isset($_POST['insert_data'])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Insert Data Ayam</h1>
                             </div>
-                            <form method="post" action="?">
+                            <form class="user" method="POST">
                             
                                 <div class="form-group">
                                 <label>ID</label>

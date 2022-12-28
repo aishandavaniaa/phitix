@@ -40,22 +40,26 @@ $sesLvl = $_SESSION['level'];
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">PHITIX</sup></div>
-            </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <div class="sidebar-brand-icon flip-n-180">
+        <img src="img/chicken.png"
+            class="right-arrow"
+            style="transform: scaleX(-1);">
+        </div>
+        <div class="sidebar-brand-text mx-1">PHITIX</div>
+    </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -96,7 +100,7 @@ $sesLvl = $_SESSION['level'];
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider"></hr>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -484,7 +488,7 @@ $sesLvl = $_SESSION['level'];
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-9 col-md-6 mb-4">
+                        <div class="col-xl-12 col-md-6 mb-4">
                             <div class="card shadow mb-2">
                                 <!-- Card Header - Dropdown -->
                                 <div

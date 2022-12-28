@@ -41,24 +41,26 @@ $sesLvl = $_SESSION['level'];
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+     <!-- Page Wrapper -->
+     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">PHITIX</div>
-            </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <div class="sidebar-brand-icon flip-n-180">
+        <img src="img/chicken.png"
+            class="right-arrow"
+            style="transform: scaleX(-1);">
+        </div>
+        <div class="sidebar-brand-text mx-1">PHITIX</div>
+    </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+    <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -340,6 +342,7 @@ $sesLvl = $_SESSION['level'];
                                             <th>Harga Satuan</th>
                                             <th>Payment</th>
                                             <th>Address</th>
+                                            <th>Aksi</th>
                                        </tr>
                                     </thead>
                                     <tbody>
