@@ -14,27 +14,17 @@ $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
     $id = $_POST['id'];
-    $tanggal_ovk   = $_POST['tanggal_vaksin'];
-    $jenis_ovk  = $_POST['jenis_vaksin'];
+    $tanggal_ovk   = $_POST['tanggal_ovk'];
+    $jenis_ovk  = $_POST['jenis_ovk'];
     $jumlah_ovk  = $_POST['jumlah_ayam'];
-    $next_ovk = $_POST['next_vaksin'];
-    $biaya_ovk  = $_POST['biaya_vaksin'];
-    $total_biaya = $_POST['totalbiaya'];
+    $next_ovk = $_POST['next_ovk'];
+    $biaya_ovk  = $_POST['biaya_ovk'];
+    $total_biaya = $_POST['total_biaya'];
 
     $query = "UPDATE vaksin_detail SET tanggal_ovk='$tanggal_ovk', jenis_ovk='$jenis_ovk', jumlah_ayam='$jumlah_ovk', next_ovk='$next_ovk', biaya_ovk='$biaya_ovk', total_biaya = '$total_biaya' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
-
-    if($result){
-        echo "<script>alert('berhasil update data');</script>";
-        echo "<script>location='vaksin.php';</script>";
-    } else{
-        echo "<script>alert('gagal update data');</script>";
-        
-    }
-
-  
-    // header('Location: vaksin.php');
+    header('Location: vaksin.php');
 }
 
 $id = $_GET['id'];
@@ -42,17 +32,16 @@ $query = "SELECT * FROM vaksin_detail WHERE id='$id'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    // $id     = $_POST['id'];
-    // $tanggal_ovk   = $_POST['tanggal_vaksin
-    // '];
-    // $jenis_ovk  = $_POST['jenis_vaksin'];
-    // $jumlah_ovk  = $_POST['jumlah_vaksin'];
-    // $next_ovk = $_POST['next_vaksin'];
-    // $biaya_ovk  = $_POST['biaya_vaksin'];
-    // $total_biaya = $_POST['total_biaya'];
+    $id     = $row['id'];
+    $tanggal_ovk   = $row['tanggal_ovk'];
+    $jenis_ovk  = $row['jenis_ovk'];
+    $jumlah_ovk  = $row['jumlah_ayam'];
+    $next_ovk = $row['next_ovk'];
+    $biaya_ovk  = $row['biaya_ovk'];
+    $total_biaya = $row['total_biaya'];
 
-
-?>
+    
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +122,7 @@ while ($row = mysqli_fetch_array($result)){
                 </div>
 
         </ul>
-        <!-- End of Sidebar -->
+          <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -152,105 +141,22 @@ while ($row = mysqli_fetch_array($result)){
                     </form>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
+                   
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
+                        
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+                           
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+                        
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
+                            
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
@@ -309,7 +215,7 @@ while ($row = mysqli_fetch_array($result)){
                             </div>
                         </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -322,18 +228,7 @@ while ($row = mysqli_fetch_array($result)){
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
+                                
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -354,37 +249,34 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Data Vaksin</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Data OVK</h1>
                             </div>
                             <form class="user" action="edit_vaksin.php" method="POST">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Date</label>
-                                    <input type="date" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_vaksin" value="<?php echo $row['tanggal_ovk']; ?>">
+                                    <label>Tanggal OVK</label>
+                                    <input type="date" class="form-control form-control-user" id="exampleInputEmail" name="tanggal_ovk" value="<?php echo $row['tanggal_ovk']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Jenis Vaksin</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_vaksin" value="<?php echo $row['jenis_ovk'] ?>">
+                                    <label>Jenis OVK</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" name="jenis_ovk" value="<?php echo $row['jenis_ovk'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Jumlah Ayam</label>
                                     <input type="number" class="form-control form-control-user" id="jmlmasuk" name="jumlah_ayam" value="<?php echo $row['jumlah_ayam'] ?>">
                                 </div>
                                     <div class="form-group">
-                                    <label>Next Vaksin</label>
-                                    <input type="date" class="form-control form-control-user" id="exampleInputUsername" name="next_vaksin" value="<?php echo $row['next_ovk'] ?>">
+                                    <label>Next OVK</label>
+                                    <input type="date" class="form-control form-control-user" id="exampleInputUsername" name="next_ovk" value="<?php echo $row['next_ovk'] ?>">
                                 </div>
                                     <div class="form-group">
-                                    <label>Biaya Vaksin</label>
-                                    <input type="number" class="form-control form-control-user" id="hargasatuan" name="biaya_vaksin" value="<?php echo $row['biaya_ovk'] ?>">
+                                    <label>Biaya OVK</label>
+                                    <input type="number" class="form-control form-control-user" id="hargasatuan" name="biaya_ovk" value="<?php echo $row['biaya_ovk'] ?>">
                                 </div>
-                                </div>
-                                    <div class="form-group">
-                                    <label>Total Biaya</label>
-                                    <input type="number" class="form-control form-control-user rounded-pill" id="result" name="totalbiaya" value="<?php echo $row['total_biaya'] ?>">
-                                </div>
+                               
+                             
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
