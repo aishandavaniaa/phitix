@@ -13,29 +13,29 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
-    $id     = $_POST['id'];
+    $id_ayam     = $_POST['id_ayam'];
     $tanggal_masuk   = $_POST['tanggal_masuk'];
     $jumlah_masuk   = $_POST['jumlah_masuk'];
     $harga_satuan = $_POST['harga_satuan'];
    
-    $mati   = $_POST['mati'];
+    
 
-    $query = "UPDATE data_ayam SET tanggal_masuk='$tanggal_masuk', jumlah_masuk='$jumlah_masuk', harga_satuan='$harga_satuan', total_harga='$total_harga', mati='$mati' WHERE id='$id'";
+    $query = "UPDATE data_ayam SET tanggal_masuk='$tanggal_masuk', jumlah_masuk='$jumlah_masuk', harga_satuan='$harga_satuan' WHERE id_ayam='$id_ayam'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: ayam.php');
 }
-$id = $_GET['id'];
-$query = "SELECT * FROM data_ayam WHERE id='$id'";
+$id_ayam = $_GET['id_ayam'];
+$query = "SELECT * FROM data_ayam WHERE id_ayam='$id_ayam'";
 $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
-    $id = $row['id'];
+    $id_ayam = $row['id_ayam'];
     $tanggal_masuk = $row['tanggal_masuk'];
     $jumlah_masuk = $row['jumlah_masuk'];
     $harga_satuan = $row['harga_satuan'];
    
-    $mati = $row['mati'];
+   
 
 ?>
 
@@ -249,7 +249,7 @@ while ($row = mysqli_fetch_array($result)){
                             </div>
                             <form class="user" action="edit_ayam.php" method="POST">
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id" value="<?php echo $id; ?>">
+                                    <input type="hidden" class="form-control form-control-user" id="exampleInputId" name="id_ayam" value="<?php echo $id_ayam; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Masuk</label>
@@ -264,10 +264,7 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="harga_satuan" value="<?php echo $harga_satuan; ?>">
                                 </div>
                               
-                                <div class="form-group">
-                                    <label>Mati</label>
-                                    <input type="number" class="form-control form-control-user" id="exampleInputUsername" name="mati" value="<?php echo $mati; ?>">
-                                </div>
+                               
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">

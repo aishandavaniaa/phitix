@@ -197,7 +197,7 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $id = $row['id'];
+                                                $id_ayam = $row['id_ayam'];
                                                 $tanggal_masuk = $row['tanggal_masuk'];
                                                 $jumlah_masuk = $row['jumlah_masuk'];
                                                 $harga_satuan = $row['harga_satuan'];
@@ -206,7 +206,7 @@ $sesLvl = $_SESSION['level'];
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $id; ?></td>
+                                            <td><?php echo $id_ayam; ?></td>
                                             <td><?php echo $tanggal_masuk; ?></td>
                                             <td><?php echo $jumlah_masuk; ?></td>
                                             <td><?php echo $harga_satuan; ?></td>

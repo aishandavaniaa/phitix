@@ -88,6 +88,7 @@ $sesLvl = $_SESSION['level'];
                         <h6 class="collapse-header">KELOLA DATA</h6>
 
                          <a class="collapse-item" href="ayam.php">Data Ayam</a>
+                         <a class="collapse-item" href="catat_ayam.php">Data Catat Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data Vaksin</a>
                         <a class="collapse-item" href="data_tk.php">Tenaga Kerja</a>

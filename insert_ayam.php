@@ -16,13 +16,14 @@ $sesLvl = $_SESSION['level'];
 if(isset($_POST['insert_data'])) {
 
     //$id = $_POST['id'];
+    $id_ayam   = $_POST['id_ayam'];
     $tanggal_masuk   = $_POST['tanggal_masuk'];
     $jumlah_masuk   = $_POST['jumlah_masuk'];
     $harga_satuan = $_POST['harga_satuan'];
   
     $mati  = $_POST['mati'];
 
-    $query = "INSERT INTO data_ayam (id, tanggal_masuk, jumlah_masuk, harga_satuan, total_harga, mati) VALUES ('$id', '$tanggal_masuk', '$jumlah_masuk', '$harga_satuan', '$total_harga', '$mati')";
+    $query = "INSERT INTO data_ayam (id_ayam, tanggal_masuk, jumlah_masuk, harga_satuan, total_harga) VALUES ('$id_ayam', '$tanggal_masuk', '$jumlah_masuk', '$harga_satuan', '$total_harga')";
     $result = mysqli_query($koneksi, $query);
     header('Location: ayam.php');
 }
@@ -198,17 +199,14 @@ if(isset($_POST['insert_data'])) {
                                 </div>
                                 <div class="form-group">
                                 <label>Jumlah masuk</label>
-                                    <input type="number" class="form-control form-control-user input" id="jmlmasuk" name="jumlah_masuk">
+                                    <input type="number" class="form-control form-control-user input" id="jumlah_masuk" name="jumlah_masuk">
                                 </div>
                                 <div class="form-group">
                                 <label>Harga Satuan</label>
-                                    <input type="number" class="form-control form-control-user input" id="hargasatuan" name="harga_satuan">
+                                    <input type="number" class="form-control form-control-user input" id="harga_satuan" name="harga_satuan">
                                 </div>
                                
-                                <div class="form-group">
-                                    <label>Mati</label>
-                                    <input type="number" class="form-control form-control-user" name="mati">
-                                </div>
+                               
                                   <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px round;">

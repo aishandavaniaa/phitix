@@ -99,13 +99,13 @@ $sesLvl = $_SESSION['level'];
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+             <!-- Sidebar Toggler (Sidebar) -->
+             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
         </ul>
-          <!-- End of Sidebar -->
+        <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -125,81 +125,35 @@ $sesLvl = $_SESSION['level'];
 
                     <!-- Topbar Search -->
                    
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                           
-
-                        <!-- Nav Item - Alerts -->
-                        
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                </form>
                             </div>
                         </li>
 
-                        
-
+                    
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -211,9 +165,9 @@ $sesLvl = $_SESSION['level'];
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
+                             
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -225,17 +179,18 @@ $sesLvl = $_SESSION['level'];
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                 <!-- Begin Page Content -->
+                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Karyawan</h1>
-                    
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Data Stok Ayam</h1>
+
                     <!-- DataTales Example -->
                         <!-- DataTales Example -->
+                        
                         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Table Karyawan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Table Catat Ayam</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -243,17 +198,19 @@ $sesLvl = $_SESSION['level'];
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID Karyawan</th>
-                                            <th>Nama Karyawan</th>
-                                            <th>Jabatan</th>
-                                            <th>Gaji</th>
+                                            
+                                            <th>Tanggal Masuk</th>
+                                            <th>Jumlah Masuk (ekor)</th>
+                                            
+                                            <th>Mati</th>
+                                            <th>Total Ayam (ekor)</th>
                                             <th>Aksi</th>
+                                           
                                         </tr>
-                                        
                                     </thead>
                                     <tbody>
-                                    <?php
-                                            $query = "SELECT * FROM tenaga_kerja";
+                                        <?php
+                                        $query = "SELECT id, data_ayam.tanggal_masuk, data_ayam.jumlah_masuk, catat_ayam.mati FROM data_ayam INNER JOIN catat_ayam ON data_ayam.id_ayam = catat_ayam.id_ayam;";
                                             $result = mysqli_query($koneksi, $query); 
                                             $no = 1;      
                                             if ($sesLvl == 1) {
@@ -262,68 +219,45 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                
-                                                $id_karyawan = $row['id_karyawan'];
-                                                $nama_karyawan = $row['nama_karyawan'];
-                                                $jabatan = $row['jabatan'];
-                                                $gaji = $row['gaji'];
-                                                $total_gaji = $row['gaji'];
+                                                $id= $row['id'];
+                                                $tanggal= $row['tanggal_masuk'];
+                                                $jumlah = $row['jumlah_masuk'];
+                                               
+                                                $mati = $row['mati'];
+                                                $total_ayam = $jumlah-$mati;
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $id_karyawan; ?></td>
-                                            <td><?php echo $nama_karyawan; ?></td>
-                                            <td><?php echo $jabatan; ?></td>
-                                            <td><?php echo $gaji; ?></td>
                                             
-                                            
+                                            <td><?php echo $tanggal; ?></td>
+                                            <td><?php echo $jumlah; ?></td>
                                            
+                                            <td><?php echo $mati; ?></td>
+                                            <td><?php echo $total_ayam; ?></td>
                                             <td>
-                                                
-                                            <a href="edit_tk.php?id= <?php echo $row['id_karyawan']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_catat_ayam.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_tk.php?&id=<?php echo $row['id_karyawan']; ?>');"><i class="fas fa-trash"></i></a>
+                                          
                                             </td>
-                                            
-                                        </tr>
-                                        
+                                             
+                                            </tr>
                                         <?php
                                             $no++;
                                             }
-
-                                            $query = "SELECT  SUM(gaji) from tenaga_kerja";
-                                            $result = mysqli_query($koneksi, $query); 
-                                            //display data on web page
-                                            while($row = mysqli_fetch_array($result)){
-                                                $total_gaji = $row['SUM(gaji)'];
-                                        
-                                            }
-                                            
-                                           //close the connection
-                                        
                                         ?>
-                                       
-                                   </tbody>
-                                   <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><b><i>TOTAL GAJI:</b></i> </td>
-                                            <td><b><i><?php echo $total_gaji; ?></i></b></td>
-                                            <td></td>
-                                        </tr>
+                                    </tbody>
                                 </table>
                                 <td width="160">
-                               
-                                
-                                <a href="insert_tk.php" name="insert_data" class="btn btn-primary <?php echo $dis; ?>">Tambah Data</a>
-                          </td> 
+                              
+</td>
+
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
+                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -348,8 +282,9 @@ $sesLvl = $_SESSION['level'];
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-<!--Delete Modal-->
-<div class="modal fade" id="modalDelete">
+
+    <!--Delete Modal-->
+    <div class="modal fade" id="modalDelete">
         <div class="modal-dialog">
             <div class="modal-content" style="margin-top:100px;">
                 <div class="modal-header">
@@ -364,6 +299,7 @@ $sesLvl = $_SESSION['level'];
             </div>
         </div>
     </div>
+
     <!-- Javascript untuk popup modal Delete-->
     <script type="text/javascript">
     function confirmModal(delete_url){
@@ -411,7 +347,5 @@ $sesLvl = $_SESSION['level'];
 </body>
 
 </html>
-
-
 
 

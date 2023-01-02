@@ -225,7 +225,7 @@ $sesLvl = $_SESSION['level'];
                                 <td width="160">
                                
                                 
-                                <a href="insert_pendapatan.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
+                                <a href="insert_pendapatan.php" name="insert_data" class="btn btn-primary <?php echo $dis; ?>">Tambah Data</a>
                           </td> 
                             </div>
                         </div>

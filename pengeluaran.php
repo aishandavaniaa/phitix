@@ -239,7 +239,7 @@ $sesLvl = $_SESSION['level'];
                                 </table>
                                 <td width="160">
                                
-                                <a href="insert_pengeluaran.php" name="insert_data" class="btn btn-primary">Tambah Data</a>
+                                <a href="insert_pengeluaran.php" name="insert_data" class="btn btn-primary <?php echo $dis; ?>">Tambah Data</a>
                                         </td>
                       </td> 
                             </div>

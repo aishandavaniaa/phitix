@@ -200,10 +200,11 @@ $sesLvl = $_SESSION['level'];
                                             <th>No</th>
                                             <th>ID Ayam</th>
                                             <th>Tanggal Masuk</th>
-                                            <th>Jumlah Masuk</th>
-                                            <th>Harga Satuan</th>
+                                            <th>Jumlah Masuk (ekor)</th>
+                                            <th>Harga Satuan (Rp)</th>
                                             <th>Total Harga</th>
-                                            <th>Mati</th>
+                                          
+                                            
                                             <th>Aksi</th>
                                            
                                         </tr>
@@ -219,25 +220,25 @@ $sesLvl = $_SESSION['level'];
                                                 $dis = "disabled";
                                             }        
                                             while ($row = mysqli_fetch_array($result)){
-                                                $id = $row['id'];
+                                                $id_ayam = $row['id_ayam'];
                                                 $tanggal_masuk = $row['tanggal_masuk'];
                                                 $jumlah_masuk = $row['jumlah_masuk'];
                                                 $harga_satuan = $row['harga_satuan'];
                                                 $total_harga = $jumlah_masuk*$harga_satuan;
-                                                $mati = $row['mati'];
+                                               
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $id; ?></td>
+                                            <td><?php echo $id_ayam; ?></td>
                                             <td><?php echo $tanggal_masuk; ?></td>
                                             <td><?php echo $jumlah_masuk; ?></td>
                                             <td><?php echo $harga_satuan; ?></td>
                                             <td><?php echo $total_harga; ?></td>
-                                            <td><?php echo $mati; ?></td>
+                                           
                                             <td>
-                                            <a href="edit_ayam.php?id= <?php echo $row['id']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_ayam.php?id_ayam= <?php echo $row['id_ayam']; ?>" class="btn btn-primary btn-circle <?php echo $dis; ?>"><i class="fas fa-pen"></i></a>
 
-                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_ayam.php?&id=<?php echo $row['id']; ?>');"><i class="fas fa-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-circle <?php echo $dis;?>" onClick="confirmModal('hapus_ayam.php?&id_ayam=<?php echo $row['id_ayam']; ?>');"><i class="fas fa-trash"></i></a>
                                             </td>
                                              
                                             </tr>
@@ -248,7 +249,7 @@ $sesLvl = $_SESSION['level'];
                                     </tbody>
                                 </table>
                                 <td width="160">
-                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary">Tambah Data</a>                             
+                                <a href="insert_ayam.php" name="insert_data" class="btn btn-primary <?php echo $dis; ?>">Tambah Data</a>                             
 </td>
 
 

@@ -263,7 +263,7 @@ $sesLvl = $_SESSION['level'];
                                 </table>
                                     </tbody>
                                 </table>
-                                <a href="insert_distribusi.php" class="btn btn-primary">Tambah Data</a>
+                                <a href="insert_distribusi.php" class="btn btn-primary <?php echo $dis; ?>">Tambah Data</a>
                             </div>
                         </div>
                     </div>

@@ -102,13 +102,13 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <form class="user" action="login.php" method="post">
                                         <div>
-                                    <label>Login as:</label>
-                                    <div class="form-group">
+                                 <!--     <label>Login as:</label>
+                                   
                                            
                                             <select class="form-group" aria-describedby="Default select example" rounded>
                                             <option selected value="admin">Admin</option>
                                             <option value="owner">Owner</option>
-                                    </div>
+                                    </div>--> 
                                              <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
