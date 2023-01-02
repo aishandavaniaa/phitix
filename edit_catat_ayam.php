@@ -21,7 +21,7 @@ if( isset($_POST['update']) ){
    
     
 
-    $query = "UPDATE catat_ayam SET id='$id', id_ayam='$id_ayam', tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id'";
+    $query = "UPDATE data_ayam SET tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id_ayam'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: catat_ayam.php');
@@ -108,6 +108,7 @@ while ($row = mysqli_fetch_array($result)){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Data</h6>
+                    <a class="collapse-item" href="catat_ayam.php">Data Catat Ayam</a>
                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data OVK</a>
