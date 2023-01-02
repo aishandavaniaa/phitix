@@ -36,8 +36,6 @@ while ($row = mysqli_fetch_array($result)){
     $tanggal = $row['tanggal'];
     $jumlah = $row['jumlah'];
     $mati = $row['mati'];
-   
-   
 
 ?>
 
@@ -54,8 +52,8 @@ while ($row = mysqli_fetch_array($result)){
 
     <title>PHITIX</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+     <!-- Custom fonts for this template-->
+     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -63,10 +61,10 @@ while ($row = mysqli_fetch_array($result)){
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-</head>
+    </head>
 
 <body class="bg-gradient-primary">
- <!-- Page Wrapper -->
+    <!-- Page Wrapper -->
  <div id="wrapper">
 
 <!-- Sidebar -->
@@ -95,7 +93,7 @@ while ($row = mysqli_fetch_array($result)){
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
+             <!-- Heading -->
             <div class="sidebar-heading">
             Data Ternak Ayam | PHITIX
             </div>
@@ -119,8 +117,9 @@ while ($row = mysqli_fetch_array($result)){
                         <a class="collapse-item" href="pendapatan.php">Pendapatan</a>
                 </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+
+                </ul>
+           <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -244,10 +243,9 @@ while ($row = mysqli_fetch_array($result)){
             <div class="card-body w-75 vh-50 ">
                 <!-- Nested Row within Card Body -->
 
-
-                        <div class="p-2">
+                <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit Catat Ayam</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Catat ayam</h1>
                             </div>
                           <form class="user" action="edit_catat_ayam.php" method="POST">
                                 <div class="form-group">
@@ -255,14 +253,13 @@ while ($row = mysqli_fetch_array($result)){
                                     <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="mati" value="<?php echo $mati; ?>">
                                 </div>
                               
-                               
                                 <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
                                     <div class="px-3" style="width: 150px;">
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="catat_ayam.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="distribusi.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
@@ -289,8 +286,8 @@ while ($row = mysqli_fetch_array($result)){
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     <!-- Logout Modal-->
+     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -309,8 +306,8 @@ while ($row = mysqli_fetch_array($result)){
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+   <!-- Bootstrap core JavaScript-->
+   <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
