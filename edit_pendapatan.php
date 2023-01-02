@@ -13,6 +13,7 @@ $sesName = $_SESSION['name'];
 $sesLvl = $_SESSION['level'];
 
 if( isset($_POST['update']) ){
+    $id     = $_POST['id'];
     $tanggal   = $_POST['tanggal'];
     $pemasukan   = $_POST['pemasukan'];
     $pengeluaran   = $_POST['pengeluaran'];
@@ -47,7 +48,7 @@ while ($row = mysqli_fetch_array($result)){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PHITIX</title>
+    <title>Phitix</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -105,6 +106,7 @@ while ($row = mysqli_fetch_array($result)){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Data</h6>
+                        <a class="collapse-item" href="catat ayam.php">Data catat Ayam</a>
                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data OVK</a>
