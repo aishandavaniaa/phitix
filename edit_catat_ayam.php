@@ -21,7 +21,7 @@ if( isset($_POST['update']) ){
    
     
 
-    $query = "UPDATE data_ayam SET tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id_ayam'";
+    $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id_ayam'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: catat_ayam.php');
