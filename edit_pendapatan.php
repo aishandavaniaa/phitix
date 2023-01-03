@@ -48,7 +48,7 @@ while ($row = mysqli_fetch_array($result)){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PHITIX</title>
+    <title>Phitix</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -244,7 +244,7 @@ while ($row = mysqli_fetch_array($result)){
 
                         <div class="p-2">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Insert Data Pendapatan</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Edit Data Pendapatan</h1>
                             </div>
                             <form class="user" action="edit_pendapatan.php" method="POST">
                                 <div class="form-group">
@@ -262,7 +262,7 @@ while ($row = mysqli_fetch_array($result)){
                                     <label>Pengeluaran</label>
                                     <input type="number" class="form-control form-control-user" id="exampleInputPassword" name="pengeluaran" value="<?php echo $pengeluaran; ?>">
                                 </div>
-                                
+                               
                                
                                                         <hr>
                                 <div class="form-group row" style="position: relative; float: right; ">
