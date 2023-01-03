@@ -20,7 +20,7 @@ if(isset($_POST['insert_data'])) {
     $pemasukan   = $_POST['pemasukan'];
     $pengeluaran   = $_POST['pengeluaran'];
 
-    $query = "INSERT INTO pendapatan (id, tanggal, pemasukan, pengeluaran) VALUES ('$id', '$tanggal', '$pemasukan', '$pengeluaran')";
+    $query = "INSERT INTO pendapatan  VALUES (null, '$id', '$tanggal', '$pemasukan', '$pengeluaran')";
     $result = mysqli_query($koneksi, $query);
     header('Location: pendapatan.php');
 }
