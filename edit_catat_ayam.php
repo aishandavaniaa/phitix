@@ -22,7 +22,11 @@ if( isset($_POST['update']) ){
     
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id_ayam'";
+=======
+    $query = "UPDATE catat_ayam SET id='$id', id_ayam='$id_ayam', tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id'";
+>>>>>>> parent of d0166a7 (rubah)
 =======
     $query = "UPDATE catat_ayam SET id='$id', id_ayam='$id_ayam', tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id'";
 >>>>>>> parent of d0166a7 (rubah)
