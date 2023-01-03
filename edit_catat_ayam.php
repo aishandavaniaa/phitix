@@ -21,7 +21,11 @@ if( isset($_POST['update']) ){
    
     
 
-    $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id'";
+<<<<<<< HEAD
+    $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id_ayam'";
+=======
+    $query = "UPDATE catat_ayam SET id='$id', id_ayam='$id_ayam', tanggal='$tanggal', jumlah='$jumlah', mati='$mati' WHERE id='$id'";
+>>>>>>> parent of d0166a7 (rubah)
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: catat_ayam.php');
@@ -32,6 +36,7 @@ $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
     $id = $row['id'];
+    $id_ayam = $row['id_ayam'];
     $tanggal = $row['tanggal'];
     $jumlah = $row['jumlah'];
     $mati = $row['mati'];
@@ -107,7 +112,6 @@ while ($row = mysqli_fetch_array($result)){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Data</h6>
-                    <a class="collapse-item" href="catat_ayam.php">Data Catat Ayam</a>
                         <a class="collapse-item" href="ayam.php">Data Ayam</a>
                         <a class="collapse-item" href="pakan.php">Data Pakan</a>
                         <a class="collapse-item" href="vaksin.php">Data OVK</a>
@@ -259,7 +263,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="catat_ayam.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="distribusi.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
@@ -325,5 +329,4 @@ while ($row = mysqli_fetch_array($result)){
 </body>
 
 </html>
-<?php 
-} ?>
+<?php } ?>
