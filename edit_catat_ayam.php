@@ -21,7 +21,7 @@ if( isset($_POST['update']) ){
    
     
 
-    $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id_ayam'";
+    $query = "UPDATE catat_ayam SET mati='$mati' WHERE id='$id'";
     echo $query;
     $result = mysqli_query($koneksi, $query);
     header('Location: catat_ayam.php');
@@ -32,7 +32,6 @@ $result = mysqli_query($koneksi, $query) or die(mysql_error());
 //$nomor = 1;
 while ($row = mysqli_fetch_array($result)){
     $id = $row['id'];
-    $id_ayam = $row['id_ayam'];
     $tanggal = $row['tanggal'];
     $jumlah = $row['jumlah'];
     $mati = $row['mati'];
@@ -260,7 +259,7 @@ while ($row = mysqli_fetch_array($result)){
                                         <button type="submit" name="update" class="btn btn-primary btn-user btn-block">Update</button>
                                     </div>
                                     <div style="width: 125px;">
-                                        <a href="distribusi.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
+                                        <a href="catat_ayam.php" class="btn btn-secondary btn-user btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </form>
@@ -326,4 +325,5 @@ while ($row = mysqli_fetch_array($result)){
 </body>
 
 </html>
-<?php } ?>
+<?php 
+} ?>
